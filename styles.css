@@ -602,3 +602,235 @@ input:checked + .slider:before {
         grid-template-columns: 1fr; 
     }
 }
+
+.resume-section {
+    padding: 80px 8%;
+    background-color: #9C8C74; 
+    min-height: 100vh;
+}
+
+.resume-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+}
+
+.resume-left {
+    width: 30%; 
+    position: sticky;
+    top: 100px;
+}
+
+.profile-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%; 
+}
+
+.profile-avatar-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #E0E0E0; 
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.profile-avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card h3 {
+    color: #4E342E;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.profile-role {
+    display: block;
+    color: #8D6E63;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-desc {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.resume-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resume-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon-box-small {
+    width: 40px;
+    height: 40px;
+    background-color: #9C8C74;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.card-header h3 {
+    color: #4E342E;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 10px;
+    border-left: 2px solid #E0E0E0; 
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -6px; 
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #9C8C74;
+    border-radius: 50%;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.timeline-header h4 {
+    color: #4E342E;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: #8D8D8D;
+    font-weight: 500;
+}
+
+.institution {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.skills-category {
+    margin-bottom: 20px;
+}
+
+.skills-category:last-child {
+    margin-bottom: 0;
+}
+
+.skills-category h5 {
+    color: #8D6E63; 
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.tags-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags-group span {
+    background-color: #9C8C74;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    background-color: #F9F9F9;
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.hobby-item:hover {
+    transform: translateY(-2px);
+    background-color: #EFEBE9; 
+}
+
+.hobby-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #9C8C74; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0; 
+}
+
+.hobby-item span {
+    font-size: 0.9rem;
+    color: #5D4037;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+}
