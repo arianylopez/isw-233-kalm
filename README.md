@@ -11,13 +11,21 @@ El objetivo principal es centralizar mi perfil profesional, mostrar mis habilida
 El proyecto sigue una arquitectura limpia y estandarizada para facilitar su mantenimiento:
 
 /Portafolio-Ariany
+
 │
+
 ├── index.html       # Estructura y contenido principal
+
 ├── styles.css       # Estilos visuales, diseño y variables de tema
+
 ├── script.js        # Lógica de interactividad y validaciones
+
 └── img/             # Recursos gráficos (avatares, capturas de proyectos)
+
     ├── avatar.png
+    
     ├── project-1.jpg
+    
     └── ...
     
 ## 3. Qué se hace
