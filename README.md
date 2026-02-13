@@ -50,7 +50,7 @@ Se ha desarrollado una aplicación web de una sola página (Single Page Applicat
 
 El desarrollo se llevó a cabo utilizando tecnologías web estándar sin dependencias de frameworks pesados, para demostrar un dominio sólido de las bases:
 
-*HTML5:* Uso de etiquetas semánticas (<header>, <main>, <section>, <footer>) para mejorar la accesibilidad y el SEO.
+*HTML5:* Uso de etiquetas semánticas (header, main, section, footer) para mejorar la accesibilidad y el SEO.
 
 *CSS3:*
 
