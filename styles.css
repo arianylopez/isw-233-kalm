@@ -1198,3 +1198,230 @@ input:checked + .slider:before {
         grid-template-columns: 1fr; 
     }
 }
+
+.contact-section {
+    padding: 80px 8%;
+    background-color: #FFFFFF; 
+    min-height: 100vh;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.contact-banner {
+    background-color: #9C8C74;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    max-width: 85%; 
+}
+
+.contact-avatar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contact-avatar img {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-info-card {
+    flex: 1; 
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+}
+
+.contact-info-card h3, 
+.contact-form-card h3 {
+    font-size: 1.5rem;
+    color: #4E342E;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #6D5D53; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-weight: 700;
+    color: #6D5D53;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.social-section h4 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.social-icons-contact {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons-contact a {
+    width: 45px;
+    height: 45px;
+    background-color: #9C8C74; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-contact a:hover {
+    transform: translateY(-3px);
+    background-color: #6D5D53;
+}
+
+.contact-form-card {
+    flex: 1.5; 
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6D5D53;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #C4B6A6; 
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6D5D53; 
+}
+
+.error-msg {
+    display: none;
+    color: #D32F2F;
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #D32F2F;
+}
+
+.form-group.error .error-msg {
+    display: block;
+}
+
+.btn-send {
+    width: 100%;
+    padding: 15px;
+    background-color: #6D5D53;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-send:hover {
+    background-color: #4E342E;
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .contact-info-card, .contact-form-card {
+        width: 100%;
+        flex: none;
+    }
+    
+    .contact-banner {
+        max-width: 100%;
+        margin-top: 60px; 
+    }
+    
+    .contact-avatar {
+        top: 50px; 
+    }
+}
