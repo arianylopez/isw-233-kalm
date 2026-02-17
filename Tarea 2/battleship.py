@@ -133,13 +133,76 @@ class SeabattleField:
                 row += symbols.get(self.grid[y][x], '?') + " "
             print(row)
 
+class SeabattleAgent:
+    def __init__(self, field):
+        self.my_field = field
+        self.opponent_field = SeabattleField()
+
+    def parse_move(self, text_move):
+        if not text_move or len(text_move) < 2:
+            return None
+        
+        try:
+            col_char = text_move[0].upper()
+            row_char = text_move[1:]
+
+            x = ord(col_char) - ord('A')
+            y = int(row_char) - 1
+
+            if 0 <= x < GRID_SIZE and 0 <= y < GRID_SIZE:
+                return x, y
+            return None
+        except ValueError:
+            return None
+        
+    def move_to_string(self, x, y):
+        col_char = chr(ord('A') + x)
+        row_char = str(y + 1)
+        return f"{col_char}{row_char}"
+    
+    def game_ended(self):
+        return self.my_field.is_loser()
+    
+    def print_fields(self):
+        print(f"{'MI TABLERO':^25} | {'OPONENTE':^25}")
+        
+        header = "  A B C D E F G H"
+        print(f"{header}   | {header}")
+        
+        symbols = {UNKNOWN: '~', EMPTY: '·', SHIP: '■', HIT: 'x', KILL: '#'}
+        
+        for y in range(GRID_SIZE):
+            row_my = f"{y+1} "
+            for x in range(GRID_SIZE):
+                val = self.my_field.grid[y][x]
+                row_my += symbols.get(val, '?') + " "
+            
+            row_opp = f"{y+1} "
+            for x in range(GRID_SIZE):
+                val = self.opponent_field.grid[y][x]
+                char = symbols.get(val, '?')
+                if val == UNKNOWN: 
+                    char = '~'
+                row_opp += char + " "
+                
+            print(f"{row_my}  | {row_opp}")
+
 if __name__ == "__main__":
-    campo = SeabattleField()
-    campo.get_random_field(12345)
-    campo.print_debug()
-
-    for x in range(8):
-        res = campo.shoot(x, 0)
-        res_str = ["MISS,", "HIT", "KILL"][res]
-
-    campo.print_debug()
+    print("--- Test del Agente y Visualización ---")
+    
+    mi_campo = SeabattleField()
+    mi_campo.get_random_field(seed=12345)
+    
+    agent = SeabattleAgent(mi_campo)
+    
+    coord = agent.parse_move("C7")
+    print(f"Parse 'C7': {coord} (Esperado: 2, 6)")
+    
+    texto = agent.move_to_string(0, 0)
+    print(f"String (0,0): {texto} (Esperado: A1)")
+    
+    agent.opponent_field.grid[0][0] = EMPTY 
+    agent.opponent_field.grid[1][1] = HIT
+    
+    print("Visualización de tableros (Izquierda: Mis barcos, Derecha: Mis disparos):")
+    agent.print_fields()
