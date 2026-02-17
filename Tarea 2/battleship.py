@@ -8,6 +8,10 @@ SHIP = 2
 HIT = 3
 KILL = 4
 
+RESULT_MISS = 0
+RESULT_HIT = 1
+RESULT_KILL = 2
+
 GRID_SIZE = 8
 SHIPS_CONFIG = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1]
 
@@ -65,20 +69,77 @@ class SeabattleField:
             ship_coords.append((cx, cy))
         self.ships.append(ship_coords)
 
+    def shoot(self, x, y):
+        if not (0 <= x < GRID_SIZE and 0 <= y < GRID_SIZE):
+            return RESULT_MISS
+        state = self.grid[y][x]
+        if state == EMPTY or state == UNKNOWN:
+            self.grid[y][x] = EMPTY 
+            return RESULT_MISS 
+        
+        if state == SHIP:
+            self.grid[y][x] = HIT
+            if self._is_ship_sunk(x, y):
+                self._mark_entire_ship_kill(x, y)
+                return RESULT_KILL
+            return RESULT_HIT
+        
+        if state == HIT:
+            return RESULT_HIT
+        if state == KILL:
+            return RESULT_KILL
+        
+        return RESULT_MISS
+    
+    def is_loser(self):
+        for row in self.grid:
+            if SHIP in row:
+                return False
+        return True
+    
+    def mark_miss(self, x, y):
+        self.grid[y][x] = EMPTY
+
+    def mark_kill(self, x, y):
+        self.grid[y][x] = KILL
+
+    def _get_ship_containing(self, x, y):
+        for ship in self.ships:
+            if(x, y) in ship:
+                return ship
+        return None
+    
+    def _is_ship_sunk(self, x, y):
+        ship = self._get_ship_containing(x, y)
+        if not ship:
+            return False
+        for(sx, sy) in ship:
+            if self.grid[sy][sx] != HIT:
+                return False
+        return True
+    
+    def _mark_entire_ship_kill(self, x, y):
+        ship = self._get_ship_containing(x, y)
+        if ship:
+            for(sx, sy) in ship:
+                self.grid[sy][sx] = KILL 
+
     def print_debug(self):
-        print(" A B C D E F G H")
+        print("  A B C D E F G H")
+        symbols = {UNKNOWN: '?', EMPTY: '.', SHIP: 'S', HIT: 'X', KILL: '#'}
         for y in range(GRID_SIZE):
             row = f"{y+1} "
             for x in range(GRID_SIZE):
-                val = self.grid[y][x]
-                char = "."
-                if val == SHIP:
-                    char = 'S'
-                row += char + " "
+                row += symbols.get(self.grid[y][x], '?') + " "
             print(row)
 
 if __name__ == "__main__":
     campo = SeabattleField()
-    semilla = 12345
-    campo.get_random_field(semilla)
+    campo.get_random_field(12345)
+    campo.print_debug()
+
+    for x in range(8):
+        res = campo.shoot(x, 0)
+        res_str = ["MISS,", "HIT", "KILL"][res]
+
     campo.print_debug()
