@@ -17,7 +17,7 @@ class AudioRecorder:
         self.audio_interface = pyaudio.PyAudio()
 
     def record_audio(self):
-        stream = self.interface.open(
+        stream = self.audio_interface.open(
             format=self.config.format,
             channels=self.config.channels,
             rate=self.config.rate,
