@@ -94,7 +94,7 @@ class SeabattleField:
             ship_points.append(Point(r, c))
         self.ships.append(ship_points)
 
-    def find_ship(self, point: Point):
+    def _find_ship_at(self, point: Point):
         for ship in self.ships:
             for ship_point in ship:
                 if ship_point == point:
@@ -102,7 +102,7 @@ class SeabattleField:
         return None
     
     def ship_sunk(self, point: Point) -> bool:
-        ship = self.find_ship(point)
+        ship = self._find_ship_at(point)
         if not ship:
             return False
         for p in ship:
