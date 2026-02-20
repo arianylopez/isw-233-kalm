@@ -1,4 +1,6 @@
 import sys
+from audio_config import AudioConfig, AudioRecorder, AudioPlayer
+from network_handler import UdpClient, UdpServer
 
 class Configuration:
     def __init__(self, arguments):
@@ -13,12 +15,13 @@ class Configuration:
         return self.arguments[1]
     
     def get_port(self):
-        return self.arguments[2]
+        return int(self.arguments[2])
     
 class Application:
     def __init__(self, mode, port):
         self.mode = mode
         self.port = port
+        self.audio_config = AudioConfig()
 
     def run(self):
         if self.mode == "server":
@@ -29,9 +32,15 @@ class Application:
 
     def start_server(self):
         print("Server mode starting on port", self.port)
+        player = AudioPlayer(self.audio_config)
+        server = UdpServer(self.port, self.audio_config, player)
+        server.start_listening()
 
     def start_client(self):
         print("Client mode starting on port", self.port)
+        recorder = AudioRecorder(self.audio_config)
+        client = UdpClient(self.port, self.audio_config, recorder)
+        client.start_transmission()
 
 def main():
     validator = Configuration(sys.argv)
