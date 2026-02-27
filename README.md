@@ -86,3 +86,5 @@ python "Tarea 2/main.py" <semilla> <ip_servidor> <puerto>
 ```
 
 Durante el juego, se debe introducir los movimientos usando el formato de letra y número indicado por el conversor (por ejemplo, A1, D4, H8).
+
+[Conversacion Gemini](https://gemini.google.com/share/94c30b092eef)
