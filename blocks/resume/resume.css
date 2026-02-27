@@ -1,0 +1,230 @@
+.resume {
+    padding: 80px 8%;
+    background-color: var(--hero-bg-color); 
+    min-height: 100vh;
+}
+
+.resume__container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+}
+
+.resume__sidebar {
+    width: 30%; 
+    position: sticky;
+    top: 100px;
+}
+
+.resume__main {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    height: 100%; 
+}
+
+.profile-card__avatar {
+    width: 120px;
+    height: 120px;
+    background-color: #E0E0E0; 
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.profile-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card__name {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.profile-card__role {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-card__desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.resume-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.resume-card__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.resume-card__icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.resume-card__title {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Elemento: Timeline */
+.timeline {
+    position: relative;
+    padding-left: 10px;
+    border-left: 2px solid #E0E0E0; 
+    margin-left: 10px;
+}
+
+.timeline__item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.timeline__item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline__dot {
+    position: absolute;
+    left: -6px; 
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.timeline__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.timeline__title {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.timeline__date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.timeline__institution {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.skills-category {
+    margin-bottom: 20px;
+}
+
+.skills-category:last-child {
+    margin-bottom: 0;
+}
+
+.skills-category__title {
+    color: var(--primary-color); 
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Elemento: Hobbies */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+}
+
+.hobby {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    background-color: var(--bg-color);
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.hobby:hover {
+    transform: translateY(-2px);
+    background-color: #EFEBE9; 
+}
+
+.hobby__icon-box {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color); 
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.hobby__name {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .resume__container {
+        flex-direction: column;
+    }
+    .resume__sidebar, .resume__main {
+        width: 100%;
+        position: static;
+    }
+}
+@media (max-width: 480px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
