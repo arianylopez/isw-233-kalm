@@ -1,85 +1,70 @@
-# 📂 Portafolio Personal - Ariany Lopez
+# 📂 Portafolio Personal - Arquitectura y Metodología BEM
 
 ## 1. Introducción
 
-Este repositorio contiene el código fuente de mi Portafolio Web Personal. Como estudiante de Ingeniería de Software en la Universidad Católica Boliviana (UCB), este proyecto actúa como mi carta de presentación digital.
+Este repositorio contiene el código fuente de mi Portafolio Web Personal. Como estudiante de Ingeniería de Software en la Universidad Católica Boliviana (UCB), este proyecto es tanto mi carta de presentación digital como una demostración práctica de mis conocimientos en arquitectura de software y diseño de interfaces.
 
-El objetivo principal es centralizar mi perfil profesional, mostrar mis habilidades técnicas, exhibir mis proyectos académicos y ofrecer un medio de contacto directo, todo bajo un diseño moderno y minimalista que refleja mi identidad profesional.
+El objetivo principal de esta refactorización ha sido migrar de una estructura monolítica a una arquitectura modular y escalable utilizando la metodología **BEM (Block, Element, Modifier)**, aplicando principios de "Clean Code" y asegurando un mantenimiento eficiente a largo plazo.
 
-## 2. Estructura del Proyecto
+## 2. Metodología y Arquitectura
 
-El proyecto sigue una arquitectura limpia y estandarizada para facilitar su mantenimiento:
+El proyecto adopta un enfoque modular donde la estructura (HTML), la presentación (CSS) y el comportamiento (JS) se piensan en términos de componentes independientes:
 
-/Portafolio-Ariany
+* **BEM en CSS:** Los estilos están encapsulados para evitar colisiones, utilizando una nomenclatura estricta (`bloque__elemento--modificador`).
+* **Lógica Tradicional en JS:** Para el comportamiento interactivo (validaciones, menú activo, cambio de tema), se prioriza el uso de lógica tradicional (ciclos `for` clásicos y estructuras condicionales `if/else` explícitas) en lugar de funciones de orden superior o librerías externas. Esto garantiza una comprensión fundamental de los algoritmos y un control absoluto sobre el flujo de ejecución del navegador.
 
-│
+## 3. Estructura de Directorios
 
-├── index.html       # Estructura y contenido principal
+El código fuente se divide en bloques lógicos que luego se unifican en un entorno de "build" (archivos centrales de distribución).
 
-├── styles.css       # Estilos visuales, diseño y variables de tema
+```
+portafolio/
+├── index.html               # Estructura principal llamando a los bundles
+├── img/                     # Recursos gráficos
+├── blocks/                  # Módulos independientes según BEM
+│   ├── about/
+|   ├── blog/
+│   ├── button/
+│   ├── contact-form/
+│   ├── core/
+|   ├── footer/
+│   ├── hero/
+│   ├── project-card/
+|   ├── resume/
+│   └── sidebar/
+├── styles.css               # Archivo de ensamblaje (Build CSS)
+└── script.js                # Archivo de ensamblaje (Build JS)
+```
+## 4. Bloques Identificados y Refactorizados
+Durante la refactorización, el monolito original se dividió en los siguientes bloques clave:
 
-├── script.js        # Lógica de interactividad y validaciones
+### - core (Variables y Base)
+Actúa como la única fuente de verdad para el diseño del sitio. Contiene las variables globales (paleta de colores en tonos tierra, bordes redondeados, transiciones) y los estilos base compartidos (como .section-title y divisores).
 
-└── img/             # Recursos gráficos (avatares, capturas de proyectos)
+### - sidebar (Navegación y Tema)
+Encapsula la barra lateral izquierda, los enlaces de navegación (navbar) y el interruptor de Modo Oscuro (theme-toggle). Su lógica iterativa en JS detecta la posición del scroll para iluminar el enlace activo sin interferir con otros scripts.
 
-    ├── avatar.png
-    
-    ├── project-1.jpg
-    
-    └── ...
-    
-## 3. Qué se hace
+### - hero
+Contiene la sección de bienvenida. Se estructuró para mantener los textos y la imagen del avatar en sus propios contenedores (hero__text y hero__image-container), asegurando que el diseño sea completamente responsivo.
 
-Se ha desarrollado una aplicación web de una sola página (Single Page Application - SPA) totalmente responsiva y funcional que incluye las siguientes secciones y características:
+### - about
+Bloque destinado a la sección "Sobre mí". El contenido está diseñado para enfocarse estrictamente en la personalidad y habilidades blandas (soft skills) de la autora mediante etiquetas limpias (tags__item), separando la demostración técnica para otras secciones del portafolio.
 
-*Hero Section:* Presentación principal con diseño visual impactante.
+### - button
+Un bloque transversal y reutilizable. Se eliminó la dependencia de las clases genéricas antiguas para crear un componente .button base con modificadores específicos (--white, --outline-white, --submit) que pueden inyectarse en el Hero, el Formulario o cualquier vista futura.
 
-*Sobre Mí:* Descripción personal y profesional con tarjetas de habilidades.
+### - project-card
+Componente diseñado para la galería del portafolio. Encapsula la imagen de previsualización, la descripción del proyecto y el botón flotante de GitHub. Su estructura asegura que un cambio en la tarjeta no afecte el layout de la grilla que lo contiene (projects__grid).
 
-*Curriculum:* Línea de tiempo educativa, stack tecnológico y hobbies.
+### - contact-form
+Bloque que contiene la interfaz del formulario y la información de contacto. La lógica de validación está aislada e implementada desde cero con validaciones algorítmicas paso a paso, gestionando los modificadores de estado de error (form-group--error) de manera directa en el DOM.
 
-*Portafolio:* Galería de proyectos destacados con enlaces directos a repositorios de GitHub.
-
-*Blog:* Sección de artículos recientes con diseño de tarjetas.
-
-*Contacto:* Formulario unificado con validación de datos en tiempo real.
-
-*Funcionalidad Dark Mode:* Sistema de cambio de tema (Claro/Oscuro).
-
-## 4. Cómo se hace
-
-El desarrollo se llevó a cabo utilizando tecnologías web estándar sin dependencias de frameworks pesados, para demostrar un dominio sólido de las bases:
-
-*HTML5:* Uso de etiquetas semánticas (header, main, section, footer) para mejorar la accesibilidad y el SEO.
-
-*CSS3:*
-
-- Implementación de CSS Variables (Custom Properties) para gestionar la paleta de colores y facilitar la transición al Modo Oscuro.
-
-- Uso de Flexbox y CSS Grid para la maquetación y el diseño responsivo (adaptable a móviles, tablets y escritorio).
-
-- Efectos de transición y hover para mejorar la experiencia de usuario (UX).
-
-*JavaScript:*
-
-- Manipulación del cambio de tema.
-
-- Lógica de validación del formulario de contacto antes del envío.
-
-## 5. Por qué se hace
-
-Este proyecto nace de varias necesidades profesionales y académicas:
-
-*Marca Personal:* Para diferenciarme en el mercado laboral y mostrar no solo lo que sé hacer, sino quién soy.
-
-*Demostración Técnica:* Para evidenciar mi capacidad de llevar un diseño (Figma) a código funcional.
-
-*Práctica Continua:* Para aplicar conceptos en frontend, manteniendo el código limpio ("Clean Code") y organizado.
-
-*Networking:* Para facilitar que reclutadores y colaboradores contacten conmigo y vean mis repositorios de manera centralizada.
-
-## 6. Diseño (Figma)
+## 5. Diseño (Figma)
 
 El diseño visual y la experiencia de usuario fueron prototipados previamente. El diseño se encuentra en el siguiente enlace:
 
 [Ver proyecto en Figma](https://www.figma.com/design/QG7T3aoa2EUJzReh0Jrmou/CV?node-id=0-1&t=A5LQg9W8XbjZzCVF-1)
+
+## 6. Conversación con Gemini
+
+[Ver conversacion](https://gemini.google.com/share/b5f090298878) 
