@@ -5,6 +5,9 @@ import './components/AboutPage.js';
 import './components/ContactPage.js';
 import './components/ResumePage.js';
 import './components/ProjectsPage.js';
+import './components/BlogCard.js';
+import './components/BlogPage.js';
+import './components/Footer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     new Router();
