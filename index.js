@@ -1,5 +1,11 @@
 import Router from './core/Router.js';
 
+import './components/HomePage.js';
+import './components/AboutPage.js';
+import './components/ContactPage.js';
+import './components/ResumePage.js';
+import './components/ProjectsPage.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     new Router();
 
