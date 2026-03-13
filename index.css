@@ -1,0 +1,17 @@
+@import './blocks/global.css';
+
+@import './blocks/button.css';
+@import './blocks/service-card.css';
+@import './blocks/profile-card.css';
+@import './blocks/resume-card.css';
+@import './blocks/project-card.css';
+@import './blocks/blog-card.css';
+
+@import './blocks/sidebar.css';
+@import './blocks/hero.css';
+@import './blocks/about.css';
+@import './blocks/resume.css';
+@import './blocks/projects.css';
+@import './blocks/blog.css';
+@import './blocks/contact.css';
+@import './blocks/footer.css';

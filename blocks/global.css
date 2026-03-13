@@ -1,0 +1,100 @@
+:root {
+    --bg-body: #FDFBF7;       
+    --sidebar-bg: #FFFFFF;     
+    --sidebar-border: transparent;
+    
+    --bg-hero: #9C8E7E;   
+    --bg-section-white: #FFFFFF;
+    --bg-section-brown: #9C8C74;
+
+    --text-title: #000000;
+    --text-main: #4E342E;     
+    --text-muted: #666666;      
+    --text-light: #8D8D8D;
+    --text-white: #FFFFFF;
+    
+    --accent-main: #9C8C74;   
+    --accent-hover: #8D6E63;    
+    --accent-dark: #6D5D53;    
+    
+    --card-bg-primary: #FFFFFF;
+    --card-bg-secondary: #F9F9F9;
+    --card-border: #E5E7EB;
+    --project-content-bg: #9C8C74;
+    
+    --input-bg: #FFFFFF;
+    --input-border: #C4B6A6;
+    
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-body: #24272C;       
+    --sidebar-bg: #24272C;     
+    --sidebar-border: #333333;
+    
+    --bg-hero: #5D4D44;   
+    --bg-section-white: #24272C;
+    --bg-section-brown: #5D4D44;
+
+    --text-title: #FFFFFF;
+    --text-main: #EFEBE9;     
+    --text-muted: #D7CCC8;      
+    --text-light: #B0B0B0;
+    --text-white: #FFFFFF;
+    
+    --accent-main: #9C8C74;   
+    --accent-hover: #8D6E63;    
+    --accent-dark: #3E2723;    
+    
+    --card-bg-primary: #7D7165;
+    --card-bg-secondary: #6D5D53;
+    --card-border: transparent;
+    --project-content-bg: #6B6056;
+    
+    --input-bg: #6B6056;
+    --input-border: #8D7D70;
+    
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.2);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+    display: flex;
+}
+
+.content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+}

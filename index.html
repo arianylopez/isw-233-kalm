@@ -4,61 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Ariany Lopez</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="layout">
+    <div class="main-container">
+        
         <aside class="sidebar">
             <div class="sidebar__header">
                 <div class="sidebar__logo">
                     <span>AL</span>
                 </div>
-                <h2 class="sidebar__name">Ariany Lopez</h2>
+                <h2 class="sidebar__title">Ariany Lopez</h2>
             </div>
             
-            <nav class="navbar">
-                <ul class="navbar__list">
-                    <li class="navbar__item">
-                        <a href="#inicio" class="navbar__link navbar__link--active">
-                            <i class="fas fa-home"></i> <span>INICIO</span>
+            <nav class="sidebar__nav">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item">
+                        <a href="#inicio" class="sidebar__link sidebar__link--active">
+                            <i class="fas fa-home sidebar__icon"></i> <span class="sidebar__text">INICIO</span>
                         </a>
                     </li>
-                    <li class="navbar__item">
-                        <a href="#sobre-mi" class="navbar__link">
-                            <i class="far fa-user"></i> <span>SOBRE MÍ</span>
+                    <li class="sidebar__item">
+                        <a href="#sobre-mi" class="sidebar__link">
+                            <i class="far fa-user sidebar__icon"></i> <span class="sidebar__text">SOBRE MÍ</span>
                         </a>
                     </li>
-                    <li class="navbar__item">
-                        <a href="#curriculum" class="navbar__link">
-                            <i class="far fa-file-alt"></i> <span>CURRICULUM</span>
+                    <li class="sidebar__item">
+                        <a href="#curriculum" class="sidebar__link">
+                            <i class="far fa-file-alt sidebar__icon"></i> <span class="sidebar__text">CURRICULUM</span>
                         </a>
                     </li>
-                    <li class="navbar__item">
-                        <a href="#portafolio" class="navbar__link">
-                            <i class="fas fa-briefcase"></i> <span>PORTAFOLIO</span>
+                    <li class="sidebar__item">
+                        <a href="#portafolio" class="sidebar__link">
+                            <i class="fas fa-briefcase sidebar__icon"></i> <span class="sidebar__text">PORTAFOLIO</span>
                         </a>
                     </li>
-                    <li class="navbar__item">
-                        <a href="#blog" class="navbar__link">
-                            <i class="fas fa-book-open"></i> <span>BLOG</span>
+                    <li class="sidebar__item">
+                        <a href="#blog" class="sidebar__link">
+                            <i class="fas fa-book-open sidebar__icon"></i> <span class="sidebar__text">BLOG</span>
                         </a>
                     </li>
-                    <li class="navbar__item">
-                        <a href="#contacto" class="navbar__link">
-                            <i class="far fa-envelope"></i> <span>CONTACTO</span>
+                    <li class="sidebar__item">
+                        <a href="#contacto" class="sidebar__link">
+                            <i class="far fa-envelope sidebar__icon"></i> <span class="sidebar__text">CONTACTO</span>
                         </a>
                     </li>
                 </ul>
             </nav>
+
+            <div class="sidebar__theme">
+                <i class="far fa-moon sidebar__theme-icon"></i>
+                <label class="sidebar__theme-switch">
+                    <input type="checkbox" id="theme-toggle" class="sidebar__theme-input">
+                    <span class="sidebar__theme-slider sidebar__theme-slider--round"></span>
+                </label>
+            </div>
         </aside>
 
-        <main class="main-content">
+        <main class="content">
             
             <section id="inicio" class="hero">
                 <div class="hero__wrapper">
-                    <div class="hero__text">
+                    <div class="hero__content">
                         <span class="hero__greeting">ESTUDIANTE DE INGENIERÍA DE SOFTWARE</span>
                         <h1 class="hero__title">Hola, Soy <br> Ariany Lopez !</h1>
                         <div class="hero__description">
@@ -69,25 +79,20 @@
                         </div>
                         
                         <div class="hero__actions">
-                            <a href="#portafolio" class="button button--white">VER PROYECTOS</a>
-                            <a href="#contacto" class="button button--outline-white">CONTÁCTAME</a>
+                            <a href="#portafolio" class="btn btn--white">VER PROYECTOS</a>
+                            <a href="#contacto" class="btn btn--outline">CONTÁCTAME</a>
                         </div>
                     </div>
 
-                    <div class="hero__image-container">
+                    <div class="hero__visual">
                         <div class="hero__image-wrapper">
-                            <img src="img/avatar.png" alt="Ariany Lopez Avatar" class="hero__avatar">
+                            <img src="img/avatar.png" alt="Ariany Lopez Avatar" class="hero__image">
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero__scroll-down">
+                <div class="hero__scroll">
                     <i class="fas fa-arrow-down"></i>
-                </div>
-                <div class="hero__carousel-indicators">
-                    <span class="hero__indicator hero__indicator--active"></span>
-                    <span class="hero__indicator"></span>
-                    <span class="hero__indicator"></span>
                 </div>
             </section>
 
@@ -95,39 +100,39 @@
                 <div class="about__container">
                     
                     <div class="about__content">
-                        <span class="section-subtitle">SOBRE MÍ</span>
-                        <h2 class="section-title">Conóceme</h2>
-                        <div class="section-divider"></div>
+                        <span class="about__subtitle">SOBRE MÍ</span>
+                        <h2 class="about__title">Conóceme</h2>
+                        <div class="about__line"></div>
 
                         <div class="about__description">
-                            <h3 class="about__heading">Soy estudiante de la Universidad Católica Boliviana con un fuerte enfoque en el desarrollo frontend e interfaces</h3> 
-                            <p class="about__paragraph">
+                            <h3>Soy estudiante de la Universidad Católica Boliviana con un fuerte enfoque en el desarrollo frontend e interfaces</h3>
+                            <p>
                                 Soy una apasionada por la tecnología y el diseño. 
                                 Me encanta resolver problemas complejos a través de código limpio y eficiente.
                                 Siempre estoy buscando aprender nuevas herramientas para mejorar mis habilidades.
                             </p>
-                            <p class="about__paragraph about__paragraph--secondary">
+                            <p>
                                 Mi objetivo es crear software escalable y bien estructurado.
                             </p>
                         </div>
 
-                        <div class="tags">
-                            <span class="tags__item">Entusiasmo</span>
-                            <span class="tags__item">Trabajo en Equipo</span>
-                            <span class="tags__item">Proactividad</span>
-                            <span class="tags__item">Adaptabilidad</span>
+                        <div class="about__skills">
+                            <span class="about__skill-tag">Python</span>
+                            <span class="about__skill-tag">Diseño UI/UX</span>
+                            <span class="about__skill-tag">C++</span>
+                            <span class="about__skill-tag">C#</span>
                         </div>
                     </div>
 
                     <div class="about__visuals">
-                        <div class="about__floating-avatar">
+                        <div class="about__avatar">
                             <img src="img/avatar-face.png" alt="Ariany Face" class="about__avatar-img">
                         </div>
 
-                        <div class="services-grid">
+                        <div class="about__services">
                             <div class="service-card">
                                 <div class="service-card__icon-box">
-                                    <i class="fas fa-code"></i>
+                                    <i class="fas fa-code service-card__icon"></i>
                                 </div>
                                 <h4 class="service-card__title">Desarrollo</h4>
                                 <p class="service-card__desc">Creación de software a medida.</p>
@@ -135,7 +140,7 @@
 
                             <div class="service-card">
                                 <div class="service-card__icon-box">
-                                    <i class="fas fa-palette"></i>
+                                    <i class="fas fa-palette service-card__icon"></i>
                                 </div>
                                 <h4 class="service-card__title">Diseño</h4>
                                 <p class="service-card__desc">Interfaces modernas y limpias.</p>
@@ -143,7 +148,7 @@
 
                             <div class="service-card">
                                 <div class="service-card__icon-box">
-                                    <i class="fas fa-bolt"></i>
+                                    <i class="fas fa-bolt service-card__icon"></i>
                                 </div>
                                 <h4 class="service-card__title">Eficiencia</h4>
                                 <p class="service-card__desc">Optimización de procesos.</p>
@@ -151,7 +156,7 @@
 
                             <div class="service-card">
                                 <div class="service-card__icon-box">
-                                    <i class="fas fa-user-friends"></i>
+                                    <i class="fas fa-user-friends service-card__icon"></i>
                                 </div>
                                 <h4 class="service-card__title">Equipo</h4>
                                 <p class="service-card__desc">Colaboración proactiva.</p>
@@ -165,13 +170,13 @@
             <section id="curriculum" class="resume">
                 <div class="resume__container">
                     
-                    <div class="resume__sidebar">
+                    <div class="resume__column resume__column--left">
                         <div class="profile-card">
                             <div class="profile-card__avatar">
                                 <img src="img/cv.jpg" alt="Perfil" class="profile-card__img">
                             </div>
                             <h3 class="profile-card__name">ARIANY LOPEZ</h3>
-                            <span class="profile-card__role">Estudiante de Ingenieria de Software</span>
+                            <span class="profile-card__role">Estudiante de Ingeniería de Software</span>
                             <p class="profile-card__desc">
                                 Estudiante de Ingeniería de Software en la Universidad Católica Boliviana
                                 (UCB), apasionada por la tecnología y su potencial transformador. Me
@@ -185,7 +190,7 @@
                         </div>
                     </div>
 
-                    <div class="resume__main">
+                    <div class="resume__column resume__column--right">
                         
                         <div class="resume-card">
                             <div class="resume-card__header">
@@ -220,7 +225,7 @@
                                     <span class="timeline__dot"></span>
                                     <div class="timeline__content">
                                         <div class="timeline__header">
-                                            <h4 class="timeline__title">Certificado de Suficiencia en el Nivel Inglés</h4>
+                                            <h4 class="timeline__title">Certificado de Suficiencia en Inglés</h4>
                                             <span class="timeline__date">Julio 2020 - Enero 2024</span>
                                         </div>
                                         <p class="timeline__institution">Centro Boliviano Americano</p>
@@ -235,31 +240,26 @@
                                 <h3 class="resume-card__title">Habilidades</h3>
                             </div>
 
-                            <div class="skills-category">
-                                <h5 class="skills-category__title">Frontend</h5>
-                                <div class="tags">
-                                    <span class="tags__item">HTML</span>
-                                    <span class="tags__item">CSS</span>
-                                    <span class="tags__item">JavaScript</span>
-                                    <span class="tags__item">React</span>
-                                    <span class="tags__item">Figma</span>
+                            <div class="skills">
+                                <div class="skills__category">
+                                    <h5 class="skills__title">Frontend</h5>
+                                    <div class="skills__tags">
+                                        <span class="skills__tag">HTML</span><span class="skills__tag">CSS</span><span class="skills__tag">JavaScript</span><span class="skills__tag">React</span><span class="skills__tag">Figma</span><span class="skills__tag">Angular</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="skills-category">
-                                <h5 class="skills-category__title">Backend</h5>
-                                <div class="tags">
-                                    <span class="tags__item">Java</span>
-                                    <span class="tags__item">Supabase</span>
+                                <div class="skills__category">
+                                    <h5 class="skills__title">Backend</h5>
+                                    <div class="skills__tags">
+                                        <span class="skills__tag">Python</span><span class="skills__tag">C#</span><span class="skills__tag">SQL</span><span class="skills__tag">Java</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="skills-category">
-                                <h5 class="skills-category__title">Herramientas</h5>
-                                <div class="tags">
-                                    <span class="tags__item">Git</span>
-                                    <span class="tags__item">GitHub</span>
-                                    <span class="tags__item">VS Code</span>
+                                <div class="skills__category">
+                                    <h5 class="skills__title">Herramientas</h5>
+                                    <div class="skills__tags">
+                                        <span class="skills__tag">Git</span><span class="skills__tag">GitHub</span><span class="skills__tag">VS Code</span><span class="skills__tag">Trello</span><span class="skills__tag">Miro</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -270,33 +270,33 @@
                                 <h3 class="resume-card__title">Hobbies</h3>
                             </div>
                             
-                            <div class="hobbies-grid">
-                                <div class="hobby">
-                                    <div class="hobby__icon-box">
+                            <div class="hobbies">
+                                <div class="hobbies__item">
+                                    <div class="hobbies__icon-box">
                                         <i class="fas fa-puzzle-piece"></i>
                                     </div>
-                                    <span class="hobby__name">Puzzles</span>
+                                    <span class="hobbies__name">Puzzles</span>
                                 </div>
 
-                                <div class="hobby">
-                                    <div class="hobby__icon-box">
+                                <div class="hobbies__item">
+                                    <div class="hobbies__icon-box">
                                         <i class="fas fa-music"></i>
                                     </div>
-                                    <span class="hobby__name">Música</span>
+                                    <span class="hobbies__name">Música</span>
                                 </div>
 
-                                <div class="hobby">
-                                    <div class="hobby__icon-box">
+                                <div class="hobbies__item">
+                                    <div class="hobbies__icon-box">
                                         <i class="fas fa-futbol"></i>
                                     </div>
-                                    <span class="hobby__name">Deporte</span>
+                                    <span class="hobbies__name">Deporte</span>
                                 </div>
 
-                                <div class="hobby">
-                                    <div class="hobby__icon-box">
+                                <div class="hobbies__item">
+                                    <div class="hobbies__icon-box">
                                         <i class="fas fa-camera"></i>
                                     </div>
-                                    <span class="hobby__name">Fotografía</span>
+                                    <span class="hobbies__name">Fotografía</span>
                                 </div>
                             </div>
                         </div>
@@ -308,62 +308,67 @@
             <section id="portafolio" class="projects">
                 <div class="projects__container">
                     <div class="projects__header">
-                        <span class="section-subtitle">PORTAFOLIO</span>
-                        <h2 class="section-title">Proyectos destacados</h2>
-                        <div class="section-divider"></div>
+                        <span class="projects__subtitle">PORTAFOLIO</span>
+                        <h2 class="projects__title">Proyectos destacados</h2>
+                        <div class="projects__line"></div>
                     </div>
 
                     <div class="projects__grid">
-                        <div class="project-card">
-                            <div class="project-card__image-container">
-                                <img src="img/project-1.png" alt="Proyecto 1" class="project-card__img">
-                                <a href="https://github.com/Diegolew/ProyectoDise-oSoftware" target="_blank" class="project-card__github-link" title="Ver en GitHub">
+                        
+                        <article class="project-card">
+                            <div class="project-card__image-box">
+                                <img src="img/project-1.png" alt="Proyecto Restaurante" class="project-card__img">
+                                <a href="https://github.com/Diegolew/ProyectoDise-oSoftware" target="_blank" class="project-card__github" title="Ver en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Proyecto Restaurante</h3>
                                 <p class="project-card__desc">Desarrollo de una aplicación web para gestión de restaurantes, incluyendo reservas, menú y control de inventario.</p>
-                                <div class="tags">
-                                    <span class="tags__item tags__item--dark">Java</span>
-                                    <span class="tags__item tags__item--dark">React</span>
-                                    <span class="tags__item tags__item--dark">Patrones de Diseño</span>
+                                <div class="project-card__tags">
+                                    <span class="project-card__tag">Java</span>
+                                    <span class="project-card__tag">React</span>
+                                    <span class="project-card__tag">Patrones de Diseño</span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
 
-                        <div class="project-card">
-                            <div class="project-card__image-container">
-                                <img src="img/project-2.jpg" alt="Proyecto 2" class="project-card__img">
-                                <a href="https://github.com/NicoleLozadaLeon/Simulador-de-Arquitectura-x86" target="_blank" class="project-card__github-link" title="Ver en GitHub">
+                        <article class="project-card">
+                            <div class="project-card__image-box">
+                                <img src="img/project-2.jpg" alt="Simulador de Arquitectura x86" class="project-card__img">
+                                <a href="https://github.com/NicoleLozadaLeon/Simulador-de-Arquitectura-x86" target="_blank" class="project-card__github" title="Ver en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Simulador de Arquitectura x86</h3>
                                 <p class="project-card__desc">Simulador de arquitectura x86 con funcionalidades de ejecución de instrucciones, visualización de registros y control de memoria.</p>
-                                <div class="tags">
-                                    <span class="tags__item tags__item--dark">Excel</span>
-                                    <span class="tags__item tags__item--dark">VBA</span>
+                                <div class="project-card__tags">
+                                    <span class="project-card__tag">Excel</span>
+                                    <span class="project-card__tag">VBA</span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
 
-                        <div class="project-card">
-                            <div class="project-card__image-container">
-                                <img src="img/project-3.jpg" alt="Proyecto 3" class="project-card__img">
-                                <a href="https://github.com/arianylopez/PROGRA2" target="_blank" class="project-card__github-link" title="Ver en GitHub">
+                        <article class="project-card">
+                            <div class="project-card__image-box">
+                                <img src="img/project-3.jpg" alt="Proyecto de Gestión de Eventos" class="project-card__img">
+                                <a href="https://github.com/arianylopez/PROGRA2" target="_blank" class="project-card__github" title="Ver en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Proyecto de Gestión de Eventos</h3>
-                                <p class="project-card__desc">Desarrollo de una aplicación web completa, incluyendo autenticación, gestión de usuarios y funcionalidades avanzadas.</p>
-                                <div class="tags">
-                                    <span class="tags__item tags__item--dark">Arquitectura Limpia</span>
+                                <p class="project-card__desc">Desarrollo de una aplicación web completa con Angular y .NET, incluyendo autenticación, gestión de usuarios y funcionalidades avanzadas.</p>
+                                <div class="project-card__tags">
+                                    <span class="project-card__tag">Angular</span>
+                                    <span class="project-card__tag">.NET</span>
+                                    <span class="project-card__tag">SQL Server</span>
+                                    <span class="project-card__tag">Mongo DB</span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
+
                     </div>
                 </div>
             </section>
@@ -371,18 +376,18 @@
             <section id="blog" class="blog">
                 <div class="blog__container">
                     
-                    <div class="blog__header">
+                    <div class="blog__header-area">
                         <div class="blog__titles">
-                            <span class="section-subtitle section-subtitle--white">BLOG</span>
-                            <h2 class="section-title section-title--white">Artículos Recientes</h2>
-                            <div class="section-divider section-divider--white"></div>
+                            <span class="blog__subtitle">BLOG</span>
+                            <h2 class="blog__title">Artículos Recientes</h2>
+                            <div class="blog__line"></div>
                             
                             <div class="blog__description-box">
-                                <p class="blog__description-text">Comparto conocimientos, experiencias y reflexiones sobre desarrollo y tecnología.</p>
+                                <p class="blog__description">Comparto conocimientos, experiencias y reflexiones sobre desarrollo y tecnología.</p>
                             </div>
                         </div>
 
-                        <div class="blog__avatar-container">
+                        <div class="blog__avatar">
                             <img src="img/avatar-thinking.png" alt="Pensando" class="blog__avatar-img">
                         </div>
                     </div>
@@ -390,14 +395,14 @@
                     <div class="blog__grid">
                         
                         <article class="blog-card">
-                            <div class="blog-card__image-container">
+                            <div class="blog-card__image-box">
                                 <img src="img/blog-1.jpg" alt="IA Generativa" class="blog-card__img">
                                 <span class="blog-card__badge">Tecnología</span>
                             </div>
                             <div class="blog-card__content">
                                 <div class="blog-card__meta">
-                                    <span class="blog-card__meta-item"><i class="far fa-calendar-alt"></i> 15 de Abril de 2024</span>
-                                    <span class="blog-card__meta-item"><i class="far fa-clock"></i> 10 minutos</span>
+                                    <span><i class="far fa-calendar-alt"></i> 15 de Abril de 2024</span>
+                                    <span><i class="far fa-clock"></i> 10 minutos</span>
                                 </div>
                                 <h3 class="blog-card__title">El impacto de la IA en el desarrollo web</h3>
                                 <p class="blog-card__desc">Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.</p>
@@ -405,14 +410,14 @@
                         </article>
 
                         <article class="blog-card">
-                            <div class="blog-card__image-container">
+                            <div class="blog-card__image-box">
                                 <img src="img/blog-2.jpg" alt="React Hooks" class="blog-card__img">
                                 <span class="blog-card__badge">Arquitectura</span>
                             </div>
                             <div class="blog-card__content">
                                 <div class="blog-card__meta">
-                                    <span class="blog-card__meta-item"><i class="far fa-calendar-alt"></i> 15 de Abril de 2024</span>
-                                    <span class="blog-card__meta-item"><i class="far fa-clock"></i> 15 minutos</span>
+                                    <span><i class="far fa-calendar-alt"></i> 15 de Abril de 2024</span>
+                                    <span><i class="far fa-clock"></i> 15 minutos</span>
                                 </div>
                                 <h3 class="blog-card__title">¿Por qué la Arquitectura de Software importa más que el código?</h3>
                                 <p class="blog-card__desc">A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear. Reflexiono sobre la importancia de diseñar sistemas escalables y limpios antes de programar.</p>
@@ -428,16 +433,16 @@
                     
                     <div class="contact__header">
                         <div class="contact__titles">
-                            <span class="section-subtitle">CONTACTAME</span>
-                            <h2 class="section-title">Trabajemos Juntos</h2>
-                            <div class="section-divider"></div>
+                            <span class="contact__subtitle">CONTACTAME</span>
+                            <h2 class="contact__title">Trabajemos Juntos</h2>
+                            <div class="contact__line"></div>
                         </div>
                         
                         <div class="contact__banner">
-                            <p class="contact__banner-text">¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y colaborar.</p>
+                            <p>¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y colaborar.</p>
                         </div>
 
-                        <div class="contact__avatar-container">
+                        <div class="contact__avatar">
                             <img src="img/avatar-contact.png" alt="Trabajemos juntos" class="contact__avatar-img">
                         </div>
                     </div>
@@ -447,81 +452,81 @@
                         <div class="contact-info">
                             <h3 class="contact-info__title">Información de Contacto</h3>
                             
-                            <div class="contact-info__list">
-                                <div class="info-item">
-                                    <div class="info-item__icon-box">
+                            <div class="contact-info__items">
+                                <div class="contact-info__item">
+                                    <div class="contact-info__icon-box">
                                         <i class="far fa-envelope"></i>
                                     </div>
-                                    <div class="info-item__details">
-                                        <span class="info-item__label">Correo</span>
-                                        <span class="info-item__value">arianylopez341@gmail.com</span>
+                                    <div class="contact-info__details">
+                                        <span class="contact-info__label">Correo</span>
+                                        <span class="contact-info__value">arianylopez341@gmail.com</span>
                                     </div>
                                 </div>
 
-                                <div class="info-item">
-                                    <div class="info-item__icon-box">
+                                <div class="contact-info__item">
+                                    <div class="contact-info__icon-box">
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
-                                    <div class="info-item__details">
-                                        <span class="info-item__label">Teléfono</span>
-                                        <span class="info-item__value">+591 77205461</span>
+                                    <div class="contact-info__details">
+                                        <span class="contact-info__label">Teléfono</span>
+                                        <span class="contact-info__value">+591 77205461</span>
                                     </div>
                                 </div>
 
-                                <div class="info-item">
-                                    <div class="info-item__icon-box">
+                                <div class="contact-info__item">
+                                    <div class="contact-info__icon-box">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
-                                    <div class="info-item__details">
-                                        <span class="info-item__label">Ubicación</span>
-                                        <span class="info-item__value">Santa Cruz, Bolivia</span>
+                                    <div class="contact-info__details">
+                                        <span class="contact-info__label">Ubicación</span>
+                                        <span class="contact-info__value">Santa Cruz, Bolivia</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="social-links">
-                                <h4 class="social-links__title">Sígueme en redes</h4>
-                                <div class="social-links__group">
-                                    <a href="https://github.com/arianylopez" class="social-links__icon"><i class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/ariany-lopez/" class="social-links__icon"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="mailto:arianylopez341@gmail.com" class="social-links__icon"><i class="far fa-envelope"></i></a>
+                            <div class="contact-info__socials">
+                                <h4 class="contact-info__socials-title">Sígueme en redes</h4>
+                                <div class="contact-info__socials-icons">
+                                    <a href="https://github.com/arianylopez" class="contact-info__social-link"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/ariany-lopez/" class="contact-info__social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:arianylopez341@gmail.com" class="contact-info__social-link"><i class="far fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="contact-form-container">
+                        <div class="contact-form">
                             <h3 class="contact-form__title">Envíame un mensaje</h3>
                             
-                            <form id="contactForm" class="contact-form">
-                                <div class="form-group">
-                                    <label for="nombre" class="form-group__label">NOMBRE *</label>
-                                    <input type="text" id="nombre" class="form-group__input" placeholder="Tu nombre completo">
-                                    <small class="form-group__error-msg">El nombre es obligatorio</small>
+                            <form id="contactForm" class="contact-form__wrapper">
+                                <div class="contact-form__group">
+                                    <label for="nombre" class="contact-form__label">NOMBRE *</label>
+                                    <input type="text" id="nombre" class="contact-form__input" placeholder="Tu nombre completo">
+                                    <small class="contact-form__error">El nombre es obligatorio</small>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="correo" class="form-group__label">CORREO *</label>
-                                    <input type="email" id="correo" class="form-group__input" placeholder="ejemplo@correo.com">
-                                    <small class="form-group__error-msg">Ingresa un correo válido</small>
+                                <div class="contact-form__group">
+                                    <label for="correo" class="contact-form__label">CORREO *</label>
+                                    <input type="email" id="correo" class="contact-form__input" placeholder="ejemplo@correo.com">
+                                    <small class="contact-form__error">Ingresa un correo válido</small>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="telefono" class="form-group__label">NUMERO DE CONTACTO</label>
-                                    <input type="tel" id="telefono" class="form-group__input" placeholder="+591 ...">
+                                <div class="contact-form__group">
+                                    <label for="telefono" class="contact-form__label">NUMERO DE CONTACTO</label>
+                                    <input type="tel" id="telefono" class="contact-form__input" placeholder="+591 ...">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="interes" class="form-group__label">¿EN QUE ESTAS INTERESADO?</label>
-                                    <input type="text" id="interes" class="form-group__input" placeholder="Desarrollo Web, Diseño, etc.">
+                                <div class="contact-form__group">
+                                    <label for="interes" class="contact-form__label">¿EN QUE ESTAS INTERESADO?</label>
+                                    <input type="text" id="interes" class="contact-form__input" placeholder="Desarrollo Web, Diseño, etc.">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="mensaje" class="form-group__label">MENSAJE *</label>
-                                    <textarea id="mensaje" rows="5" class="form-group__textarea" placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                                    <small class="form-group__error-msg">El mensaje no puede estar vacío</small>
+                                <div class="contact-form__group">
+                                    <label for="mensaje" class="contact-form__label">MENSAJE *</label>
+                                    <textarea id="mensaje" rows="5" class="contact-form__input" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                                    <small class="contact-form__error">El mensaje no puede estar vacío</small>
                                 </div>
 
-                                <button type="submit" class="button button--submit">
+                                <button type="submit" class="contact-form__submit">
                                     ENVIAR <i class="fas fa-paper-plane"></i>
                                 </button>
                             </form>
@@ -537,29 +542,29 @@
                     <div class="footer__top">
                         <div class="footer__col">
                             <h3 class="footer__title">Ariany Lopez</h3>
-                            <p class="footer__desc">Estudiante de Ingeniería de Software en la Universidad Católica Boliviana, apasionada por la tecnología y el diseño. Me encanta resolver problemas complejos a través de código limpio y eficiente.</p>
+                            <p class="footer__desc">Estudiante de Ingeniería de Software en la Universidad Católica Boliviana, apasionada por la tecnología y el diseño. Me encanta resolver problemas complejos a través de código limpio y eficiente. Siempre estoy buscando aprender nuevas herramientas para mejorar mis habilidades.</p>
                         </div>
 
                         <div class="footer__col">
                             <h3 class="footer__title">Enlaces Rápidos</h3>
                             <ul class="footer__links">
-                                <li class="footer__link-item"><a href="#sobre-mi" class="footer__link">Sobre mí</a></li>
-                                <li class="footer__link-item"><a href="#portafolio" class="footer__link">Proyectos</a></li>
-                                <li class="footer__link-item"><a href="#blog" class="footer__link">Blog</a></li>
-                                <li class="footer__link-item"><a href="#contacto" class="footer__link">Contacto</a></li>
+                                <li><a href="#sobre-mi" class="footer__link">Sobre mí</a></li>
+                                <li><a href="#portafolio" class="footer__link">Proyectos</a></li>
+                                <li><a href="#blog" class="footer__link">Blog</a></li>
+                                <li><a href="#contacto" class="footer__link">Contacto</a></li>
                             </ul>
                         </div>
 
                         <div class="footer__col">
                             <h3 class="footer__title">Sígueme</h3>
                             <div class="footer__socials">
-                                <a href="https://github.com/arianylopez" target="_blank" aria-label="GitHub" class="footer__social-icon">
+                                <a href="https://github.com/arianylopez" target="_blank" aria-label="GitHub" class="footer__social-link">
                                     <i class="fab fa-github-alt"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/ariany-lopez/" target="_blank" aria-label="LinkedIn" class="footer__social-icon">
+                                <a href="https://www.linkedin.com/in/ariany-lopez/" target="_blank" aria-label="LinkedIn" class="footer__social-link">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="mailto:arianylopez341@gmail.com" aria-label="Email" class="footer__social-icon">
+                                <a href="mailto:arianylopez341@gmail.com" aria-label="Email" class="footer__social-link">
                                     <i class="far fa-envelope"></i>
                                 </a>
                             </div>
@@ -573,9 +578,7 @@
                 </div>
             </footer>
 
-        </main>
-    </div>
-
-    <script src="script.js"></script>
+        </main> 
+    </div> 
 </body>
 </html>
