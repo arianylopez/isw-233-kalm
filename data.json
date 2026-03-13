@@ -1,0 +1,43 @@
+{
+  "projects": [
+    {
+      "title": "Proyecto Restaurante",
+      "description": "Desarrollo de una aplicación web para gestión de restaurantes, incluyendo reservas, menú y control de inventario.",
+      "image": "img/project-1.png",
+      "githubLink": "https://github.com/Diegolew/ProyectoDise-oSoftware",
+      "tags": ["Java", "React", "Patrones de Diseño"]
+    },
+    {
+      "title": "Simulador de Arquitectura x86",
+      "description": "Simulador de arquitectura x86 con funcionalidades de ejecución de instrucciones, visualización de registros y control de memoria.",
+      "image": "img/project-2.jpg",
+      "githubLink": "https://github.com/NicoleLozadaLeon/Simulador-de-Arquitectura-x86",
+      "tags": ["Excel", "VBA"]
+    },
+    {
+      "title": "Proyecto de Gestión de Eventos",
+      "description": "Desarrollo de una aplicación web completa con Angular y .NET, incluyendo autenticación, gestión de usuarios y funcionalidades avanzadas.",
+      "image": "img/project-3.jpg",
+      "githubLink": "https://github.com/arianylopez/PROGRA2",
+      "tags": ["Angular", ".NET", "SQL Server", "Mongo DB"]
+    }
+  ],
+  "blogs": [
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
+    },
+    {
+      "title": "¿Por qué la Arquitectura de Software importa más que el código?",
+      "description": "A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear. Reflexiono sobre la importancia de diseñar sistemas escalables y limpios antes de programar.",
+      "image": "img/blog-2.jpg",
+      "badge": "Arquitectura",
+      "date": "15 de Abril de 2024",
+      "readTime": "15 minutos"
+    }
+  ]
+}
