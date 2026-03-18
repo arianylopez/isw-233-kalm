@@ -1,6 +1,6 @@
-import store from '../core/Store.js';
+import store from '../../services/Store.js'; 
 
-export default class BlogCard extends HTMLElement {
+export class BlogCard extends HTMLElement {
     connectedCallback() {
         const title = this.getAttribute('title');
         const desc = this.getAttribute('desc');
@@ -40,8 +40,19 @@ export default class BlogCard extends HTMLElement {
         this.appendChild(template.content.cloneNode(true));
 
         const favBtn = this.querySelector('.blog-card__fav-btn');
+        const heartIcon = favBtn.querySelector('i');
+
         favBtn.addEventListener('click', () => {
             store.toggleFavorite(title);
+
+            const isNowFavorite = store.state.favorites.includes(title);
+            if (isNowFavorite) {
+                heartIcon.className = 'fas fa-heart';
+                favBtn.style.color = '#D32F2F'; 
+            } else {
+                heartIcon.className = 'far fa-heart';
+                favBtn.style.color = 'var(--text-light)';
+            }
         });
     }
 }

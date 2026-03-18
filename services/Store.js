@@ -3,7 +3,8 @@ import Observer from './Observer.js';
 class Store extends Observer {
     constructor() {
         super();
-        // Patrón Singleton: Única instancia global
+        
+        // SINGLETON: Garantiza una única instancia
         if (Store.instance) {
             return Store.instance;
         }
@@ -16,7 +17,7 @@ class Store extends Observer {
             activeCategory: 'Todos'
         };
 
-        // Patrón Proxy: Intercepta cualquier cambio en el estado
+        // PROXY: Intercepta mutaciones del estado para hacerlas reactivas
         this.state = new Proxy(initialState, {
             set: (target, property, value) => {
                 target[property] = value;
@@ -31,18 +32,17 @@ class Store extends Observer {
         });
     }
 
-    // Método helper para agregar/quitar favoritos
     toggleFavorite(blogTitle) {
         const favs = [...this.state.favorites];
         const index = favs.indexOf(blogTitle);
         
         if (index > -1) {
-            favs.splice(index, 1); 
+            favs.splice(index, 1);
         } else {
             favs.push(blogTitle);
         }
         
-        this.state.favorites = favs;
+        this.state.favorites = favs; 
     }
 }
 

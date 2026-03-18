@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Ariany Lopez</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.css">
     <script type="module" src="index.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,7 +14,9 @@
         
         <aside class="sidebar">
             <div class="sidebar__header">
-                <div class="sidebar__logo"><span>AL</span></div>
+                <div class="sidebar__logo">
+                    <span>AL</span>
+                </div>
                 <h2 class="sidebar__title">Ariany Lopez</h2>
             </div>
             
@@ -64,11 +66,22 @@
 
         <main class="content">
             
-            <div id="app-root"></div>
-
-            <footer-component></footer-component>
+            <home-section id="home"></home-section>
             
+            <about-section id="about"></about-section>
+            
+            <curriculum-section id="curriculum"></curriculum-section>
+            
+            <projects-section id="projects"></projects-section>
+            
+            <blog-section id="blog"></blog-section>
+            
+            <contact-section id="contact"></contact-section>
+
+            <footer-section></footer-section>
+
         </main>
-    </div> 
+
+    </div>
 </body>
 </html>

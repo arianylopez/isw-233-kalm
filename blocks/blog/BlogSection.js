@@ -1,11 +1,9 @@
-import store from '../core/Store.js';
+import store from '../../services/Store.js';
+import { BaseDataSection } from '../../services/BaseDataSection.js';
+import './BlogCard.js'; 
 
-export default class BlogPage extends HTMLElement {
-    async connectedCallback() {
-        this.innerHTML = '';
-        
-        const template = document.createElement('template');
-        template.innerHTML = `
+const sectionTemplate = document.createElement('template');
+sectionTemplate.innerHTML = `
             <section class="blog">
                 <div class="blog__container">
                     <div class="blog__header-area">
@@ -35,37 +33,29 @@ export default class BlogPage extends HTMLElement {
                 </div>
             </section>
         `;
-        this.appendChild(template.content.cloneNode(true));
 
-        try {
-            const response = await fetch('data.json');
-            this.blogsData = (await response.json()).blogs;
-            
-            this.renderBlogs();
-            this.setupFilters();
+export class BlogSection extends BaseDataSection {
+    constructor() {
+        super();
+        this.appendChild(sectionTemplate.content.cloneNode(true));
+        this.blogsData = [];
+        this.dataUrl = './data/data.json'; 
+    }
 
-            // PATRÓN OBSERVER: Nos suscribimos a los cambios de favoritos
-            store.subscribe('favoritesChanged', () => {
-                this.renderBlogs();
-            });
-
-        } catch (error) {
-            console.error('Error cargando blog:', error);
-            this.querySelector('#dynamic-blog-grid').innerHTML = '<p style="color: white;">Error al cargar.</p>';
+    processData() {
+        if (this.data && this.data.blogs) {
+            this.blogsData = this.data.blogs;
+        } else {
+            this.blogsData = [];
         }
     }
 
-    setupFilters() {
-        const btns = this.querySelectorAll('.blog__filter-btn');
-        btns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                store.state.activeCategory = e.target.dataset.category;
-                this.renderBlogs();
-            });
-        });
+    normalizeText(text) {
+        if (!text) return "";
+        return text.trim().toLowerCase();
     }
 
-    renderBlogs() {
+    renderData() {
         const grid = this.querySelector('#dynamic-blog-grid');
         if (!grid) return;
         
@@ -73,14 +63,22 @@ export default class BlogPage extends HTMLElement {
         const activeCategory = store.state.activeCategory;
 
         let filteredBlogs = this.blogsData;
+        
         if (activeCategory === 'Favoritos') {
             filteredBlogs = this.blogsData.filter(blog => store.state.favorites.includes(blog.title));
         } else if (activeCategory !== 'Todos') {
-            filteredBlogs = this.blogsData.filter(blog => blog.badge === activeCategory);
+            const normalizedActiveCategory = this.normalizeText(activeCategory);
+            
+            filteredBlogs = this.blogsData.filter(blog => {
+                const badgeText = this.normalizeText(blog.badge);
+                const categoryText = this.normalizeText(blog.category);
+                
+                return badgeText === normalizedActiveCategory || categoryText === normalizedActiveCategory;
+            });
         }
 
         if (filteredBlogs.length === 0) {
-            grid.innerHTML = '<p style="color: white;">No hay artículos en esta categoría.</p>';
+            grid.innerHTML = '<p style="color: white; grid-column: 1 / -1; text-align: center;">No hay artículos en esta categoría.</p>';
             return;
         }
 
@@ -96,6 +94,22 @@ export default class BlogPage extends HTMLElement {
             grid.appendChild(card);
         });
     }
+
+    setupListeners() {
+        const btns = this.querySelectorAll('.blog__filter-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                store.state.activeCategory = e.target.dataset.category;
+                this.renderData();
+            });
+        });
+
+        store.subscribe('favoritesChanged', () => {
+            if (store.state.activeCategory === 'Favoritos') {
+                this.renderData();
+            }
+        });
+    }
 }
 
-customElements.define('blog-page', BlogPage);
+customElements.define('blog-section', BlogSection);
