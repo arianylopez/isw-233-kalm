@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Ariany Lopez</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <div class="sidebar__logo">
+                    <span>AL</span>
+                </div>
+                <h2 class="sidebar__title">Ariany Lopez</h2>
+            </div>
+            
+            <nav class="sidebar__nav">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item">
+                        <a href="/" class="sidebar__link sidebar__link--active" data-link>
+                            <i class="fas fa-home sidebar__icon"></i> <span class="sidebar__text">INICIO</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="/about" class="sidebar__link" data-link>
+                            <i class="far fa-user sidebar__icon"></i> <span class="sidebar__text">SOBRE MÍ</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="/curriculum" class="sidebar__link" data-link>
+                            <i class="far fa-file-alt sidebar__icon"></i> <span class="sidebar__text">CURRICULUM</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="/proyectos" class="sidebar__link" data-link>
+                            <i class="fas fa-briefcase sidebar__icon"></i> <span class="sidebar__text">PORTAFOLIO</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="/blog" class="sidebar__link" data-link>
+                            <i class="fas fa-book-open sidebar__icon"></i> <span class="sidebar__text">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="/contacto" class="sidebar__link" data-link>
+                            <i class="far fa-envelope sidebar__icon"></i> <span class="sidebar__text">CONTACTO</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__theme">
+                <i class="far fa-moon sidebar__theme-icon"></i>
+                <label class="sidebar__theme-switch">
+                    <input type="checkbox" id="theme-toggle" class="sidebar__theme-input">
+                    <span class="sidebar__theme-slider sidebar__theme-slider--round"></span>
+                </label>
+            </div>
+        </aside>
+
+        <main class="content">
+            
+            <home-section id="home"></home-section>
+            
+            <about-section id="about"></about-section>
+            
+            <curriculum-section id="curriculum"></curriculum-section>
+            
+            <projects-section id="projects"></projects-section>
+            
+            <blog-section id="blog"></blog-section>
+            
+            <contact-section id="contact"></contact-section>
+
+            <footer-section></footer-section>
+
+        </main>
+
+    </div>
+</body>
+</html>
