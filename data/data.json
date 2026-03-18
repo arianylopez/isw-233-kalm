@@ -37,7 +37,8 @@
       "image": "img/blog-2.jpg",
       "badge": "Arquitectura",
       "date": "15 de Abril de 2024",
-      "readTime": "15 minutos"
+      "readTime": "15 minutos",
+      "content": "<p>A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear.</p><p>La arquitectura de software es la base fundamental que permite que una aplicación escale. Sin una buena arquitectura, terminarás con 'código espagueti' que será imposible de mantener en el futuro...</p>"
     }
   ]
 }

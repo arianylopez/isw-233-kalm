@@ -8,6 +8,7 @@ export class BlogCard extends HTMLElement {
         const badge = this.getAttribute('badge');
         const date = this.getAttribute('date');
         const readTime = this.getAttribute('readTime');
+        const content = this.getAttribute('content'); 
 
         const isFavorite = store.state.favorites.includes(title);
         const heartClass = isFavorite ? 'fas fa-heart' : 'far fa-heart';
@@ -42,7 +43,9 @@ export class BlogCard extends HTMLElement {
         const favBtn = this.querySelector('.blog-card__fav-btn');
         const heartIcon = favBtn.querySelector('i');
 
-        favBtn.addEventListener('click', () => {
+        favBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            
             store.toggleFavorite(title);
 
             const isNowFavorite = store.state.favorites.includes(title);
@@ -53,6 +56,14 @@ export class BlogCard extends HTMLElement {
                 heartIcon.className = 'far fa-heart';
                 favBtn.style.color = 'var(--text-light)';
             }
+        });
+
+        this.addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('open-blog-modal', {
+                bubbles: true,
+                composed: true,
+                detail: { title, desc, image, badge, date, readTime, content }
+            }));
         });
     }
 }
