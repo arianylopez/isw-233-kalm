@@ -39,6 +39,46 @@
       "date": "15 de Abril de 2024",
       "readTime": "15 minutos",
       "content": "<p>A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear.</p><p>La arquitectura de software es la base fundamental que permite que una aplicación escale. Sin una buena arquitectura, terminarás con 'código espagueti' que será imposible de mantener en el futuro...</p>"
+    },
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
+    },
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
+    },
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
+    },
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
+    },
+    {
+      "title": "El impacto de la IA en el desarrollo web",
+      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "image": "img/blog-1.jpg",
+      "badge": "Tecnología",
+      "date": "15 de Abril de 2024",
+      "readTime": "10 minutos"
     }
   ]
 }
