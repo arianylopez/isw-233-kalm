@@ -28,7 +28,7 @@ El diseño visual y la experiencia de usuario fueron prototipados previamente. E
 
 [Ver proyecto en Figma](https://www.figma.com/design/QG7T3aoa2EUJzReh0Jrmou/CV?node-id=0-1&t=A5LQg9W8XbjZzCVF-1) 
 
-## 6. Conversacion Gemini
+## 6. Conversacion IA
 En el enlace de GitHub que comparto, se encuentra mi portafolio desarrollado utilizando HTML, CSS y JavaScript. Las imágenes ilustran cómo se presenta en modo claro, mientras que el archivo PDF muestra la versión en modo oscuro.
 Mi objetivo es realizar algunas mejoras específicas en el diseño y la estructura del portafolio. A continuación, detallo los cambios que necesito:
 1. En las secciones que contienen tarjetas de proyectos, hay espacios en blanco que no me agradan estéticamente. Quiero que los colores de las tarjetas sean coherentes y que cubran completamente el espacio disponible, eliminando esos espacios no deseados.
