@@ -10,42 +10,33 @@ export class BlogCard extends HTMLElement {
         const readTime = this.getAttribute('readTime');
         const content = this.getAttribute('content'); 
 
-        const isFavorite = store.state.favorites.includes(title);
-        const heartClass = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-        const heartColor = isFavorite ? '#D32F2F' : 'var(--text-light)';
+        const template = document.getElementById('blog-card-template');
+        if (template) {
+            this.appendChild(template.content.cloneNode(true));
+        }
 
-        const template = document.createElement('template');
-        template.innerHTML = `
-            <article class="blog-card">
-                <div class="blog-card__image-box">
-                    <img src="${image}" alt="${title}" class="blog-card__img">
-                    <span class="blog-card__badge">${badge}</span>
-                </div>
-                <div class="blog-card__content">
-                    <div class="blog-card__meta" style="display: flex; justify-content: space-between;">
-                        <div>
-                            <span><i class="far fa-calendar-alt"></i> ${date}</span>
-                            <span style="margin-left: 10px;"><i class="far fa-clock"></i> ${readTime}</span>
-                        </div>
-                        <button class="blog-card__fav-btn" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: ${heartColor}; transition: transform 0.2s;">
-                            <i class="${heartClass}"></i>
-                        </button>
-                    </div>
-                    <h3 class="blog-card__title">${title}</h3>
-                    <p class="blog-card__desc">${desc}</p>
-                </div>
-            </article>
-        `;
-
-        this.innerHTML = '';
-        this.appendChild(template.content.cloneNode(true));
+        this.querySelector('.blog-card__img').src = image;
+        this.querySelector('.blog-card__img').alt = title;
+        this.querySelector('.blog-card__badge').textContent = badge;
+        this.querySelector('.blog-card__title').textContent = title;
+        this.querySelector('.blog-card__desc').textContent = desc;
+        this.querySelector('.blog-card__date-text').innerHTML += date;
+        this.querySelector('.blog-card__time-text').innerHTML += readTime;
 
         const favBtn = this.querySelector('.blog-card__fav-btn');
         const heartIcon = favBtn.querySelector('i');
+        
+        const isFavorite = store.state.favorites.includes(title);
+        if (isFavorite) {
+            heartIcon.className = 'fas fa-heart';
+            favBtn.style.color = '#D32F2F'; 
+        } else {
+            heartIcon.className = 'far fa-heart';
+            favBtn.style.color = 'var(--text-light)';
+        }
 
         favBtn.addEventListener('click', (e) => {
             e.stopPropagation(); 
-            
             store.toggleFavorite(title);
 
             const isNowFavorite = store.state.favorites.includes(title);

@@ -1,26 +1,17 @@
 import { BaseDataSection } from '../../services/BaseDataSection.js';
 
-const template = document.createElement('template');
-template.innerHTML = `
-    <section class="projects">
-        <div class="projects__container">
-            <div class="projects__header">
-                <span class="projects__subtitle">PORTAFOLIO</span>
-                <h2 class="projects__title">Proyectos destacados</h2>
-                <div class="projects__line"></div>
-            </div>
-            <div class="projects__grid" id="dynamic-projects-grid">
-                <p>Cargando proyectos...</p>
-            </div>
-        </div>
-    </section>
-`;
-
 export class ProjectsSection extends BaseDataSection {
     constructor() {
         super();
-        this.appendChild(template.content.cloneNode(true));
+        const template = document.getElementById('projects-template');
+        if (template) {
+            this.appendChild(template.content.cloneNode(true));
+        } else {
+            console.error('No se encontró el template: projects-template en index.html');
+        }
+        
         this.projectsList = [];
+        this.dataUrl = './data/data.json'; 
     }
 
     processData() {
