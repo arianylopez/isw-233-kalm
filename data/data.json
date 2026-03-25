@@ -25,7 +25,7 @@
   "blogs": [
     {
       "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "description": "Analizamos cómo herramientas de visión artificial y machine learning están cambiando el flujo de trabajo de los programadores modernos.",
       "image": "img/blog-1.jpg",
       "badge": "Tecnología",
       "date": "15 de Abril de 2024",
@@ -33,52 +33,43 @@
     },
     {
       "title": "¿Por qué la Arquitectura de Software importa más que el código?",
-      "description": "A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear. Reflexiono sobre la importancia de diseñar sistemas escalables y limpios antes de programar.",
+      "description": "A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear. Reflexionamos sobre patrones de diseño limpios.",
       "image": "img/blog-2.jpg",
       "badge": "Arquitectura",
       "date": "15 de Abril de 2024",
-      "readTime": "15 minutos",
-      "content": "<p>A veces nos obsesionamos con escribir líneas de código, pero un buen sistema nace antes de teclear.</p><p>La arquitectura de software es la base fundamental que permite que una aplicación escale. Sin una buena arquitectura, terminarás con 'código espagueti' que será imposible de mantener en el futuro...</p>"
+      "readTime": "15 minutos"
     },
     {
-      "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "title": "Despliegue ágil: Mi primera experiencia con Docker",
+      "description": "Configurar entornos de desarrollo locales puede ser un dolor de cabeza. Aquí te explico cómo la contenerización simplifica la vida del desarrollador.",
       "image": "img/blog-1.jpg",
       "badge": "Tecnología",
-      "date": "15 de Abril de 2024",
-      "readTime": "10 minutos"
+      "date": "20 de Mayo de 2024",
+      "readTime": "8 minutos"
     },
     {
-      "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
-      "image": "img/blog-1.jpg",
+      "title": "E-commerce desde cero: HTML, CSS, JS y Supabase",
+      "description": "Un recorrido técnico sobre cómo construir una plataforma de comercio electrónico prescindiendo de frameworks pesados y apostando por el rendimiento nativo.",
+      "image": "img/blog-2.jpg",
       "badge": "Tecnología",
-      "date": "15 de Abril de 2024",
-      "readTime": "10 minutos"
+      "date": "10 de Junio de 2024",
+      "readTime": "12 minutos"
     },
     {
-      "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
+      "title": "De Dijkstra a A*: Algoritmos en la práctica",
+      "description": "Un análisis profundo sobre diseño de algoritmos de búsqueda y cómo optimizar la toma de decisiones en el desarrollo de software.",
       "image": "img/blog-1.jpg",
       "badge": "Tecnología",
-      "date": "15 de Abril de 2024",
-      "readTime": "10 minutos"
+      "date": "05 de Agosto de 2024",
+      "readTime": "14 minutos"
     },
     {
-      "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
-      "image": "img/blog-1.jpg",
-      "badge": "Tecnología",
-      "date": "15 de Abril de 2024",
-      "readTime": "10 minutos"
-    },
-    {
-      "title": "El impacto de la IA en el desarrollo web",
-      "description": "Analizamos cómo herramientas como Gemini y ChatGPT están cambiando el flujo de trabajo de los programadores modernos.",
-      "image": "img/blog-1.jpg",
-      "badge": "Tecnología",
-      "date": "15 de Abril de 2024",
-      "readTime": "10 minutos"
+      "title": "UX/UI: La empatía como herramienta de diseño",
+      "description": "Crear wireframes funcionales va más allá de lo estético. Analizamos la usabilidad de las aplicaciones desde la perspectiva del usuario final.",
+      "image": "img/blog-2.jpg",
+      "badge": "Arquitectura",
+      "date": "12 de Septiembre de 2024",
+      "readTime": "7 minutos"
     }
   ]
 }

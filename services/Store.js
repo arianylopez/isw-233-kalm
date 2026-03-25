@@ -2,47 +2,48 @@ import Observer from './Observer.js';
 
 class Store extends Observer {
     constructor() {
-        super();
+        super(); 
         
-        // SINGLETON: Garantiza una única instancia
         if (Store.instance) {
             return Store.instance;
         }
         Store.instance = this;
+        let savedFavorites = [];
+        try {
+            const data = localStorage.getItem('blog_favorites');
+            if (data) {
+                savedFavorites = JSON.parse(data);
+                if (!Array.isArray(savedFavorites)) savedFavorites = []; 
+            }
+        } catch (e) {
+            console.error("Error al leer favoritos del navegador:", e);
+            savedFavorites = [];
+        }
 
-        const savedFavorites = JSON.parse(localStorage.getItem('blog_favorites')) || [];
-
-        const initialState = {
+        this.state = {
             favorites: savedFavorites,
             activeCategory: 'Todos'
         };
-
-        // PROXY: Intercepta mutaciones del estado para hacerlas reactivas
-        this.state = new Proxy(initialState, {
-            set: (target, property, value) => {
-                target[property] = value;
-                
-                if (property === 'favorites') {
-                    localStorage.setItem('blog_favorites', JSON.stringify(value));
-                }
-                
-                this.notify(`${property}Changed`, value);
-                return true; 
-            }
-        });
     }
 
     toggleFavorite(blogTitle) {
-        const favs = [...this.state.favorites];
-        const index = favs.indexOf(blogTitle);
+        if (!this.state.favorites) this.state.favorites = [];
+
+        const index = this.state.favorites.indexOf(blogTitle);
         
         if (index > -1) {
-            favs.splice(index, 1);
+            this.state.favorites.splice(index, 1);
         } else {
-            favs.push(blogTitle);
+            this.state.favorites.push(blogTitle);
         }
         
-        this.state.favorites = favs; 
+        try {
+            localStorage.setItem('blog_favorites', JSON.stringify(this.state.favorites));
+        } catch (e) {
+            console.error("Error al guardar favoritos:", e);
+        }
+        
+        this.notify('favoritesChanged', this.state.favorites);
     }
 }
 
