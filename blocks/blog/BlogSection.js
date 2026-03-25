@@ -13,7 +13,6 @@ export class BlogSection extends BaseDataSection {
             console.error('No se encontró el template: blog-template en index.html');
         }
         
-        this.dataUrl = './data/data.json'; 
         this.blogsData = [];
         this.filteredBlogs = []; 
         

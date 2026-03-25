@@ -1,19 +1,12 @@
-const Router = {
-    routes: {
-        "/": "home",
-        "/about": "about",
-        "/curriculum": "curriculum",
-        "/proyectos": "projects",
-        "/blog": "blog",
-        "/contacto": "contact"
-    },
+import { ROUTES } from './API.js';
 
+const Router = {
     go(route, addToHistory = true) {
         if (addToHistory) {
             history.pushState({ route }, "", route);
         }
 
-        const sectionId = this.routes[route];
+        const sectionId = ROUTES[route];
         const section = sectionId ? document.getElementById(sectionId) : null;
         
         if (!section) {

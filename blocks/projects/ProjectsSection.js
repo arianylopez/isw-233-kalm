@@ -11,7 +11,6 @@ export class ProjectsSection extends BaseDataSection {
         }
         
         this.projectsList = [];
-        this.dataUrl = './data/data.json'; 
     }
 
     processData() {

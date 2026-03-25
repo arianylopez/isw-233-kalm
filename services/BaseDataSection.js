@@ -1,8 +1,9 @@
+import { API } from './API.js';
+
 export class BaseDataSection extends HTMLElement {
     constructor() {
         super();
         this.data = null; 
-        this.dataUrl = './data/data.json'; 
     }
 
     async connectedCallback() {
@@ -13,15 +14,16 @@ export class BaseDataSection extends HTMLElement {
     }
 
     async loadData() {
-        try {
-            const response = await fetch(this.dataUrl);
-            this.data = await response.json();
-        } catch (error) {
-            console.error(`Error cargando los datos desde ${this.dataUrl}:`, error);
-        }
+        this.data = await API.getData();
     }
 
-    processData() { throw new Error('Implementar processData'); }
-    renderData() { throw new Error('Implementar renderData'); }
+    processData() {
+        throw new Error('El método processData() debe ser implementado');
+    }
+
+    renderData() {
+        throw new Error('El método renderData() debe ser implementado');
+    }
+
     setupListeners() {}
 }
