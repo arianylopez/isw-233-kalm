@@ -6,6 +6,7 @@ export class ProjectsSection extends BaseDataSection {
     constructor() {
         super();
         this.projectsList = [];
+        this.resizeObserver = null; 
     }
 
     processData() {
@@ -35,6 +36,33 @@ export class ProjectsSection extends BaseDataSection {
                 </article>
             `;
         });
+    }
+
+    setupListeners() {
+        const grid = this.shadowRoot.querySelector('#dynamic-projects-grid');
+        if (!grid) return;
+
+        if (this.resizeObserver) this.resizeObserver.disconnect();
+
+        this.resizeObserver = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                const currentWidth = entry.contentRect.width;
+
+                if (currentWidth < 650) {
+                    grid.style.gridTemplateColumns = '1fr'; // 1 columna
+                } else {
+                    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+                }
+            }
+        });
+
+        this.resizeObserver.observe(grid);
+    }
+
+    disconnectedCallback() {
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+        }
     }
 }
 customElements.define('projects-section', ProjectsSection);
