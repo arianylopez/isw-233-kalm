@@ -1,4 +1,5 @@
 import Router from './services/Router.js';
+import './styles.css';
 
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
