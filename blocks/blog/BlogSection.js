@@ -3,19 +3,12 @@ import { BaseDataSection } from '../../services/BaseDataSection.js';
 import './BlogCard.js'; 
 
 export class BlogSection extends BaseDataSection {
+    get templateId() { return 'blog-template'; }
+
     constructor() {
         super();
-        
-        const template = document.getElementById('blog-template');
-        if (template) {
-            this.appendChild(template.content.cloneNode(true));
-        } else {
-            console.error('No se encontró el template: blog-template en index.html');
-        }
-        
         this.blogsData = [];
         this.filteredBlogs = []; 
-        
         this.currentIndex = 0;
         this.itemsPerPage = 4; 
         this.observer = null;
@@ -35,8 +28,8 @@ export class BlogSection extends BaseDataSection {
     }
 
     renderData() {
-        const grid = this.querySelector('#dynamic-blog-grid');
-        const sentinel = this.querySelector('#blog-sentinel');
+        const grid = this.shadowRoot.querySelector('#dynamic-blog-grid');
+        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
         if (!grid) return;
         
         grid.innerHTML = ''; 
@@ -68,8 +61,8 @@ export class BlogSection extends BaseDataSection {
     }
 
     loadMoreItems() {
-        const grid = this.querySelector('#dynamic-blog-grid');
-        const sentinel = this.querySelector('#blog-sentinel');
+        const grid = this.shadowRoot.querySelector('#dynamic-blog-grid');
+        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
         
         const nextBatch = this.filteredBlogs.slice(this.currentIndex, this.currentIndex + this.itemsPerPage);
 
@@ -89,32 +82,28 @@ export class BlogSection extends BaseDataSection {
 
         this.currentIndex += this.itemsPerPage;
 
-        if (this.currentIndex >= this.filteredBlogs.length) {
-            if (this.observer) this.observer.disconnect();
-            sentinel.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">No hay más artículos.</p>';
-        } else {
-            sentinel.innerHTML = '<p style="color: var(--text-white);">Cargando más...</p>'; // Muestra esto mientras bajas
+        if (sentinel) {
+            if (this.currentIndex >= this.filteredBlogs.length) {
+                if (this.observer) this.observer.disconnect();
+                sentinel.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">No hay más artículos.</p>';
+            } else {
+                sentinel.innerHTML = '<p style="color: var(--text-white);">Cargando más...</p>';
+            }
         }
     }
 
     setupIntersectionObserver() {
-        const sentinel = this.querySelector('#blog-sentinel');
+        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
         
         if (this.observer) this.observer.disconnect();
 
         if (this.currentIndex >= this.filteredBlogs.length) return;
 
         this.observer = new IntersectionObserver((entries) => {
-            const sentinelEntry = entries[0];
-
-            if (sentinelEntry.isIntersecting) {
-                
-                setTimeout(() => {
-                    this.loadMoreItems();
-                }, 500); 
-                
+            if (entries[0].isIntersecting) {
+                setTimeout(() => this.loadMoreItems(), 500); 
             }
-        }, {
+        }, { 
             root: null, 
             rootMargin: '100px', 
             threshold: 0 
@@ -124,7 +113,7 @@ export class BlogSection extends BaseDataSection {
     }
 
     setupListeners() {
-        const btns = this.querySelectorAll('.blog__filter-btn');
+        const btns = this.shadowRoot.querySelectorAll('.blog__filter-btn');
         btns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 store.state.activeCategory = e.target.dataset.category;
@@ -138,31 +127,43 @@ export class BlogSection extends BaseDataSection {
             }
         });
 
-        const modal = this.querySelector('#blogModal');
-        const overlay = this.querySelector('#modalOverlay');
-        const closeBtn = this.querySelector('#modalClose');
+        const modal = this.shadowRoot.querySelector('#blogModal');
+        const overlay = this.shadowRoot.querySelector('#modalOverlay');
+        const closeBtn = this.shadowRoot.querySelector('#modalClose');
 
         this.addEventListener('open-blog-modal', (e) => {
+            if (!modal) {
+                console.warn("El HTML del modal no se encontró en el template del blog.");
+                return; 
+            }
+
             const data = e.detail;
-            this.querySelector('#modalImg').src = data.image;
-            this.querySelector('#modalImg').alt = data.title;
-            this.querySelector('#modalTitle').textContent = data.title;
-            this.querySelector('#modalDate').innerHTML = `<i class="far fa-calendar-alt"></i> ${data.date}`;
-            this.querySelector('#modalTime').innerHTML = `<i class="far fa-clock"></i> ${data.readTime}`;
-            this.querySelector('#modalBadge').textContent = data.badge;
-            this.querySelector('#modalContent').innerHTML = data.content;
+            
+            const modalImg = this.shadowRoot.querySelector('#modalImg');
+            const modalTitle = this.shadowRoot.querySelector('#modalTitle');
+            const modalDate = this.shadowRoot.querySelector('#modalDate');
+            const modalTime = this.shadowRoot.querySelector('#modalTime');
+            const modalBadge = this.shadowRoot.querySelector('#modalBadge');
+            const modalContent = this.shadowRoot.querySelector('#modalContent');
+
+            if (modalImg) { modalImg.src = data.image; modalImg.alt = data.title; }
+            if (modalTitle) modalTitle.textContent = data.title;
+            if (modalDate) modalDate.innerHTML = `<i class="far fa-calendar-alt"></i> ${data.date}`;
+            if (modalTime) modalTime.innerHTML = `<i class="far fa-clock"></i> ${data.readTime}`;
+            if (modalBadge) modalBadge.textContent = data.badge;
+            if (modalContent) modalContent.innerHTML = data.content;
 
             modal.classList.add('blog-modal--active');
             document.body.style.overflow = 'hidden'; 
         });
 
         const closeModal = () => {
-            modal.classList.remove('blog-modal--active');
+            if (modal) modal.classList.remove('blog-modal--active');
             document.body.style.overflow = ''; 
         };
 
-        closeBtn.addEventListener('click', closeModal);
-        overlay.addEventListener('click', closeModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', closeModal);
     }
 }
 

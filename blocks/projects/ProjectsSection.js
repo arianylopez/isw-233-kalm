@@ -1,15 +1,10 @@
 import { BaseDataSection } from '../../services/BaseDataSection.js';
 
 export class ProjectsSection extends BaseDataSection {
+    get templateId() { return 'projects-template'; }
+
     constructor() {
         super();
-        const template = document.getElementById('projects-template');
-        if (template) {
-            this.appendChild(template.content.cloneNode(true));
-        } else {
-            console.error('No se encontró el template: projects-template en index.html');
-        }
-        
         this.projectsList = [];
     }
 
@@ -20,14 +15,12 @@ export class ProjectsSection extends BaseDataSection {
     }
 
     renderData() {
-        const grid = this.querySelector('#dynamic-projects-grid');
+        const grid = this.shadowRoot.querySelector('#dynamic-projects-grid');
         if (!grid) return;
-
         grid.innerHTML = ''; 
 
         this.projectsList.forEach(project => {
             const tagsHtml = project.tags.map(tag => `<span class="project-card__tag">${tag}</span>`).join('');
-
             grid.innerHTML += `
                 <article class="project-card">
                     <div class="project-card__image-box">
@@ -44,5 +37,4 @@ export class ProjectsSection extends BaseDataSection {
         });
     }
 }
-
 customElements.define('projects-section', ProjectsSection);

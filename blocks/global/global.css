@@ -30,6 +30,12 @@
     --transition: all 0.3s ease;
 }
 
+/* Asegurar que los Web Components ocupen su espacio y no colapsen */
+home-section, about-section, curriculum-section, projects-section, blog-section, contact-section, footer-section, blog-card {
+    display: block;
+    width: 100%;
+}
+
 body.dark-mode {
     --bg-body: #24272C;       
     --sidebar-bg: #24272C;     

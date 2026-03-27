@@ -1,12 +1,15 @@
 import { API } from './API.js';
+import { BaseComponent } from './BaseComponent.js'; 
 
-export class BaseDataSection extends HTMLElement {
+export class BaseDataSection extends BaseComponent { 
     constructor() {
-        super();
+        super(); 
         this.data = null; 
     }
 
     async connectedCallback() {
+        super.connectedCallback(); 
+
         await this.loadData();
         this.processData();
         this.renderData();
@@ -17,13 +20,7 @@ export class BaseDataSection extends HTMLElement {
         this.data = await API.getData();
     }
 
-    processData() {
-        throw new Error('El método processData() debe ser implementado');
-    }
-
-    renderData() {
-        throw new Error('El método renderData() debe ser implementado');
-    }
-
+    processData() { throw new Error('Implementar processData'); }
+    renderData() { throw new Error('Implementar renderData'); }
     setupListeners() {}
 }
