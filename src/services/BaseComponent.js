@@ -1,18 +1,16 @@
 export class BaseComponent extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: 'open' }); 
     }
 
     get templateId() { return ''; } 
 
     connectedCallback() {
         if (this.shadowRoot.childNodes.length > 0) return;
-
-        const styleLink = document.createElement('link');
-        styleLink.rel = 'stylesheet';
-        styleLink.href = './styles.css';
-        this.shadowRoot.appendChild(styleLink);
+        document.querySelectorAll('style, link[rel="stylesheet"]').forEach(styleNode => {
+            this.shadowRoot.appendChild(styleNode.cloneNode(true));
+        });
 
         const faLink = document.createElement('link');
         faLink.rel = 'stylesheet';

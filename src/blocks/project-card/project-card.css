@@ -1,0 +1,12 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+.project-card:hover {
+    transform: translateY(-10px); 
+}

@@ -1,0 +1,6 @@
+.projects__line {
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-main);
+    margin-bottom: 40px;
+}

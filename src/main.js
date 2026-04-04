@@ -35,6 +35,24 @@ import './blocks/about/__avatar/about__avatar.css';
 import './blocks/about/__avatar-img/about__avatar-img.css';
 import './blocks/about/__services/about__services.css';
 
+import './blocks/projects/projects.css';
+import './blocks/projects/__container/projects__container.css';
+import './blocks/projects/__header/projects__header.css';
+import './blocks/projects/__subtitle/projects__subtitle.css';
+import './blocks/projects/__title/projects__title.css';
+import './blocks/projects/__line/projects__line.css';
+import './blocks/projects/__grid/projects__grid.css';
+
+import './blocks/project-card/project-card.css';
+import './blocks/project-card/__image-box/project-card__image-box.css';
+import './blocks/project-card/__img/project-card__img.css';
+import './blocks/project-card/__github/project-card__github.css';
+import './blocks/project-card/__content/project-card__content.css';
+import './blocks/project-card/__title/project-card__title.css';
+import './blocks/project-card/__desc/project-card__desc.css';
+import './blocks/project-card/__tags/project-card__tags.css';
+import './blocks/project-card/__tag/project-card__tag.css';
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
 import './blocks/curriculum/CurriculumSection.js';
