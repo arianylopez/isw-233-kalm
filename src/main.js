@@ -53,12 +53,43 @@ import './blocks/project-card/__desc/project-card__desc.css';
 import './blocks/project-card/__tags/project-card__tags.css';
 import './blocks/project-card/__tag/project-card__tag.css';
 
+import './blocks/contact/contact.css';
+import './blocks/contact/__container/contact__container.css';
+import './blocks/contact/__header/contact__header.css';
+import './blocks/contact/__subtitle/contact__subtitle.css';
+import './blocks/contact/__title/contact__title.css';
+import './blocks/contact/__line/contact__line.css';
+import './blocks/contact/__banner/contact__banner.css';
+import './blocks/contact/__avatar/contact__avatar.css';
+import './blocks/contact/__avatar-img/contact__avatar-img.css';
+import './blocks/contact/__wrapper/contact__wrapper.css';
+
+import './blocks/contact-info/contact-info.css';
+import './blocks/contact-info/__title/contact-info__title.css';
+import './blocks/contact-info/__items/contact-info__items.css';
+import './blocks/contact-info/__item/contact-info__item.css';
+import './blocks/contact-info/__icon-box/contact-info__icon-box.css';
+import './blocks/contact-info/__details/contact-info__details.css';
+import './blocks/contact-info/__label/contact-info__label.css';
+import './blocks/contact-info/__value/contact-info__value.css';
+import './blocks/contact-info/__socials-title/contact-info__socials-title.css';
+import './blocks/contact-info/__socials-icons/contact-info__socials-icons.css';
+import './blocks/contact-info/__social-link/contact-info__social-link.css';
+
+import './blocks/contact-form/contact-form.css';
+import './blocks/contact-form/__title/contact-form__title.css';
+import './blocks/contact-form/__group/contact-form__group.css';
+import './blocks/contact-form/__label/contact-form__label.css';
+import './blocks/contact-form/__input/contact-form__input.css';
+import './blocks/contact-form/__error/contact-form__error.css';
+import './blocks/contact-form/__submit/contact-form__submit.css';
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
 import './blocks/curriculum/CurriculumSection.js';
 import './blocks/projects/ProjectsSection.js';
 import './blocks/blog/BlogSection.js';
-import './blocks/contact-me/ContactSection.js';
+import './blocks/contact/ContactSection.js';
 import './blocks/footer/FooterSection.js';
 
 document.addEventListener('DOMContentLoaded', () => {

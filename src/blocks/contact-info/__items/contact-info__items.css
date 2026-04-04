@@ -1,0 +1,6 @@
+.contact-info__items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}

@@ -1,0 +1,21 @@
+.contact-form__input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border); 
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-title);
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+.contact-form__input::placeholder { color: var(--text-light); }
+.contact-form__input:focus { border-color: var(--accent-dark); }
+body.dark-mode .contact-form__input:focus { 
+    border-color: var(--text-white); 
+}
+
+.contact-form__group--error .contact-form__input {
+    border-color: #D32F2F;
+}

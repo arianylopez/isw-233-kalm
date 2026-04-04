@@ -1,0 +1,8 @@
+.contact__avatar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+@media (max-width: 900px) {
+    .contact__avatar { top: 50px; }
+}

@@ -1,0 +1,10 @@
+.contact-info {
+    flex: 1; 
+    background-color: var(--card-bg-primary);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md); 
+}
+@media (max-width: 900px) {
+    .contact-info { width: 100%; flex: none; }
+}

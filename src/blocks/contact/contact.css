@@ -1,0 +1,5 @@
+.contact {
+    padding: 80px 8%;
+    background-color: var(--bg-section-white); 
+    min-height: 100vh;
+}
