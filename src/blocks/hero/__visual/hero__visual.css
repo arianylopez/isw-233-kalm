@@ -1,0 +1,22 @@
+.hero__visual { 
+    position: relative; 
+    width: 450px; 
+    height: 450px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+@media (max-width: 992px) { 
+    .hero__visual { 
+        width: 350px; 
+        height: 350px; 
+    } 
+}
+
+@media (max-width: 768px) { 
+    .hero__visual { 
+        width: 280px; 
+        height: 280px; 
+    } 
+}

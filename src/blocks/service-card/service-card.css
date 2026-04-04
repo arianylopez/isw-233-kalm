@@ -1,0 +1,17 @@
+.service-card {
+    background-color: var(--card-bg-primary);
+    border: 1px solid var(--card-border); 
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    border-color: var(--accent-main);
+}
+
+body.dark-mode .service-card:hover {
+    background-color: var(--accent-dark); 
+}
