@@ -107,26 +107,10 @@
                         <img src="img/avatar-face.png" alt="Ariany Face" class="about__avatar-img">
                     </div>
                     <div class="about__services">
-                        <div class="service-card">
-                            <div class="service-card__icon-box"><i class="fas fa-code service-card__icon"></i></div>
-                            <h4 class="service-card__title">Desarrollo</h4>
-                            <p class="service-card__desc">Creación de software a medida.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-card__icon-box"><i class="fas fa-palette service-card__icon"></i></div>
-                            <h4 class="service-card__title">Diseño</h4>
-                            <p class="service-card__desc">Interfaces modernas y limpias.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-card__icon-box"><i class="fas fa-bolt service-card__icon"></i></div>
-                            <h4 class="service-card__title">Eficiencia</h4>
-                            <p class="service-card__desc">Optimización de procesos.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-card__icon-box"><i class="fas fa-user-friends service-card__icon"></i></div>
-                            <h4 class="service-card__title">Equipo</h4>
-                            <p class="service-card__desc">Colaboración proactiva.</p>
-                        </div>
+                        {{> service-card icon="fa-code" title="Desarrollo" desc="Creación de software a medida."}}
+                        {{> service-card icon="fa-palette" title="Diseño" desc="Interfaces modernas y limpias."}}
+                        {{> service-card icon="fa-bolt" title="Eficiencia" desc="Optimización de procesos."}}
+                        {{> service-card icon="fa-user-friends" title="Equipo" desc="Colaboración proactiva."}}
                     </div>
                 </div>
             </div>
@@ -257,36 +241,9 @@
                             <h3 class="resume-card__title">Educación</h3>
                         </div>
                         <div class="timeline">
-                            <div class="timeline__item">
-                                <span class="timeline__dot"></span>
-                                <div class="timeline__content">
-                                    <div class="timeline__header">
-                                        <h4 class="timeline__title">Ingeniería de Software</h4>
-                                        <span class="timeline__date">2023 - Presente</span>
-                                    </div>
-                                    <p class="timeline__institution">Universidad Católica Boliviana</p>
-                                </div>
-                            </div>
-                            <div class="timeline__item">
-                                <span class="timeline__dot"></span>
-                                <div class="timeline__content">
-                                    <div class="timeline__header">
-                                        <h4 class="timeline__title">Bachiller en Humanidades</h4>
-                                        <span class="timeline__date">2012 - 2023</span>
-                                    </div>
-                                    <p class="timeline__institution">Colegio Fe y Alegria</p>
-                                </div>
-                            </div>
-                            <div class="timeline__item">
-                                <span class="timeline__dot"></span>
-                                <div class="timeline__content">
-                                    <div class="timeline__header">
-                                        <h4 class="timeline__title">Certificado de Suficiencia en Inglés</h4>
-                                        <span class="timeline__date">Julio 2020 - Enero 2024</span>
-                                    </div>
-                                    <p class="timeline__institution">Centro Boliviano Americano</p>
-                                </div>
-                            </div>
+                            {{> timeline-item title="Ingeniería de Software" date="2023 - Presente" institution="Universidad Católica Boliviana"}}
+                            {{> timeline-item title="Bachiller en Humanidades" date="2012 - 2023" institution="Colegio Fe y Alegria"}}
+                            {{> timeline-item title="Certificado de Suficiencia en Inglés" date="Julio 2020 - Enero 2024" institution="Centro Boliviano Americano"}}
                         </div>
                     </div>
 
@@ -381,27 +338,9 @@
                     <div class="contact-info">
                         <h3 class="contact-info__title">Información de Contacto</h3>
                         <div class="contact-info__items">
-                            <div class="contact-info__item">
-                                <div class="contact-info__icon-box"><i class="far fa-envelope"></i></div>
-                                <div class="contact-info__details">
-                                    <span class="contact-info__label">Correo</span>
-                                    <span class="contact-info__value">arianylopez341@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="contact-info__item">
-                                <div class="contact-info__icon-box"><i class="fas fa-phone-alt"></i></div>
-                                <div class="contact-info__details">
-                                    <span class="contact-info__label">Teléfono</span>
-                                    <span class="contact-info__value">+591 77205461</span>
-                                </div>
-                            </div>
-                            <div class="contact-info__item">
-                                <div class="contact-info__icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="contact-info__details">
-                                    <span class="contact-info__label">Ubicación</span>
-                                    <span class="contact-info__value">Santa Cruz, Bolivia</span>
-                                </div>
-                            </div>
+                            {{> contact-item iconType="far" icon="fa-envelope" label="Correo" value="arianylopez341@gmail.com"}}
+                            {{> contact-item iconType="fas" icon="fa-phone-alt" label="Teléfono" value="+591 77205461"}}
+                            {{> contact-item iconType="fas" icon="fa-map-marker-alt" label="Ubicación" value="Santa Cruz, Bolivia"}}
                         </div>
                         <div class="contact-info__socials">
                             <h4 class="contact-info__socials-title">Sígueme en redes</h4>
