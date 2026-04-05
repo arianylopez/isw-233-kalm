@@ -1,7 +1,6 @@
 @import './blocks/global/global.css';        
 @import './blocks/sidebar/sidebar.css';      
 
-@import './blocks/curriculum/curriculum.css';
 @import './blocks/projects/projects.css';    
 @import './blocks/blog/blog.css';            
 @import './blocks/footer/footer.css';

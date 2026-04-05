@@ -84,9 +84,43 @@ import './blocks/contact-form/__input/contact-form__input.css';
 import './blocks/contact-form/__error/contact-form__error.css';
 import './blocks/contact-form/__submit/contact-form__submit.css';
 
+import './blocks/resume/resume.css';
+import './blocks/resume/__container/resume__container.css';
+import './blocks/resume/__column/resume__column.css';
+
+import './blocks/profile-card/profile-card.css';
+import './blocks/profile-card/__avatar/profile-card__avatar.css';
+import './blocks/profile-card/__img/profile-card__img.css';
+import './blocks/profile-card/__name/profile-card__name.css';
+import './blocks/profile-card/__role/profile-card__role.css';
+import './blocks/profile-card/__desc/profile-card__desc.css';
+
+import './blocks/resume-card/resume-card.css';
+import './blocks/resume-card/__header/resume-card__header.css';
+import './blocks/resume-card/__icon-box/resume-card__icon-box.css';
+import './blocks/resume-card/__title/resume-card__title.css';
+
+import './blocks/timeline/timeline.css';
+import './blocks/timeline/__item/timeline__item.css';
+import './blocks/timeline/__dot/timeline__dot.css';
+import './blocks/timeline/__header/timeline__header.css';
+import './blocks/timeline/__title/timeline__title.css';
+import './blocks/timeline/__date/timeline__date.css';
+import './blocks/timeline/__institution/timeline__institution.css';
+
+import './blocks/skills/skills.css';
+import './blocks/skills/__title/skills__title.css';
+import './blocks/skills/__tags/skills__tags.css';
+import './blocks/skills/__tag/skills__tag.css';
+
+import './blocks/hobbies/hobbies.css';
+import './blocks/hobbies/__item/hobbies__item.css';
+import './blocks/hobbies/__icon-box/hobbies__icon-box.css';
+import './blocks/hobbies/__name/hobbies__name.css';
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
-import './blocks/curriculum/CurriculumSection.js';
+import './blocks/resume/CurriculumSection.js';
 import './blocks/projects/ProjectsSection.js';
 import './blocks/blog/BlogSection.js';
 import './blocks/contact/ContactSection.js';

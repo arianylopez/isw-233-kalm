@@ -1,0 +1,10 @@
+.resume__container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+}
+@media (max-width: 992px) {
+    .resume__container {
+        flex-direction: column;
+    }
+}

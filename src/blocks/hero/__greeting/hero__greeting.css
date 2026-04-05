@@ -12,5 +12,5 @@
 
 body.dark-mode .hero__greeting { 
     background-color: var(--bg-section-white); 
-    color: #786B62; 
+    color: #ffffff; 
 }

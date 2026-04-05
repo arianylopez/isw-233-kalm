@@ -1,0 +1,6 @@
+.resume-card {
+    background-color: var(--card-bg-primary);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}

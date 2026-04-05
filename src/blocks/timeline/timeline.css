@@ -1,0 +1,9 @@
+.timeline {
+    position: relative;
+    padding-left: 10px;
+    border-left: 2px solid #E0E0E0; 
+    margin-left: 10px;
+}
+body.dark-mode .timeline {
+    border-left-color: #BDAAA4; 
+}
