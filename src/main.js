@@ -131,6 +131,39 @@ import './blocks/footer/__social-link/footer__social-link.css';
 import './blocks/footer/__bottom/footer__bottom.css';
 import './blocks/footer/__copy/footer__copy.css';
 
+import './blocks/blog/blog.css';
+import './blocks/blog/__container/blog__container.css';
+import './blocks/blog/__header-area/blog__header-area.css';
+import './blocks/blog/__titles/blog__titles.css';
+import './blocks/blog/__subtitle/blog__subtitle.css';
+import './blocks/blog/__title/blog__title.css';
+import './blocks/blog/__line/blog__line.css';
+import './blocks/blog/__description-box/blog__description-box.css';
+import './blocks/blog/__description/blog__description.css';
+import './blocks/blog/__avatar/blog__avatar.css';
+import './blocks/blog/__avatar-img/blog__avatar-img.css';
+import './blocks/blog/__grid/blog__grid.css';
+
+import './blocks/blog-card/blog-card.css';
+import './blocks/blog-card/__image-box/blog-card__image-box.css';
+import './blocks/blog-card/__img/blog-card__img.css';
+import './blocks/blog-card/__badge/blog-card__badge.css';
+import './blocks/blog-card/__content/blog-card__content.css';
+import './blocks/blog-card/__meta/blog-card__meta.css';
+import './blocks/blog-card/__title/blog-card__title.css';
+import './blocks/blog-card/__desc/blog-card__desc.css';
+
+import './blocks/blog-modal/blog-modal.css';
+import './blocks/blog-modal/_active/blog-modal_active.css';
+import './blocks/blog-modal/__overlay/blog-modal__overlay.css';
+import './blocks/blog-modal/__box/blog-modal__box.css';
+import './blocks/blog-modal/__close/blog-modal__close.css';
+import './blocks/blog-modal/__header-img/blog-modal__header-img.css';
+import './blocks/blog-modal/__body/blog-modal__body.css';
+import './blocks/blog-modal/__meta/blog-modal__meta.css';
+import './blocks/blog-modal/__title/blog-modal__title.css';
+import './blocks/blog-modal/__content-text/blog-modal__content-text.css';
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
 import './blocks/resume/CurriculumSection.js';

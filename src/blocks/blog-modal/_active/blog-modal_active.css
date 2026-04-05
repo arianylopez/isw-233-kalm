@@ -1,0 +1,4 @@
+.blog-modal--active {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,7 @@
+.blog-card__title {
+    font-size: 1.4rem;
+    color: var(--text-title);
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
