@@ -1,0 +1,6 @@
+.sidebar__icon {
+    font-size: 1.2rem;
+    width: 25px; 
+    text-align: center;
+    color: var(--text-light);
+}

@@ -1,3 +1,13 @@
+@import './__wrapper/hero__wrapper.css';
+@import './__content/hero__content.css';
+@import './__greeting/hero__greeting.css';
+@import './__title/hero__title.css';
+@import './__description/hero__description.css';
+@import './__actions/hero__actions.css';
+@import './__visual/hero__visual.css';
+@import './__image-wrapper/hero__image-wrapper.css';
+@import './__image/hero__image.css';
+
 .hero {
     min-height: 100vh;
     position: relative; 

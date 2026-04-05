@@ -1,3 +1,10 @@
+@import './__title/contact-form__title.css';
+@import './__group/contact-form__group.css';
+@import './__label/contact-form__label.css';
+@import './__input/contact-form__input.css';
+@import './__error/contact-form__error.css';
+@import './__submit/contact-form__submit.css';
+
 .contact-form {
     flex: 1.5; 
     background-color: var(--card-bg-primary);

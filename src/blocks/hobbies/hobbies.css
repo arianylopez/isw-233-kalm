@@ -1,3 +1,7 @@
+@import './__item/hobbies__item.css';
+@import './__icon-box/hobbies__icon-box.css';
+@import './__name/hobbies__name.css';
+
 .hobbies {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 

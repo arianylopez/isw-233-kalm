@@ -1,3 +1,11 @@
+@import './__image-box/blog-card__image-box.css';
+@import './__img/blog-card__img.css';
+@import './__badge/blog-card__badge.css';
+@import './__content/blog-card__content.css';
+@import './__meta/blog-card__meta.css';
+@import './__title/blog-card__title.css';
+@import './__desc/blog-card__desc.css';
+
 blog-card {
     display: block;
     width: 100%;

@@ -1,3 +1,7 @@
+@import './__title/skills__title.css';
+@import './__tags/skills__tags.css';
+@import './__tag/skills__tag.css';
+
 .skills {
     display: flex;
     flex-direction: column;

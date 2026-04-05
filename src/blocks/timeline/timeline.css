@@ -1,3 +1,10 @@
+@import './__item/timeline__item.css';
+@import './__dot/timeline__dot.css';
+@import './__header/timeline__header.css';
+@import './__title/timeline__title.css';
+@import './__date/timeline__date.css';
+@import './__institution/timeline__institution.css';
+
 .timeline {
     position: relative;
     padding-left: 10px;

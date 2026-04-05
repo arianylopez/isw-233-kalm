@@ -1,3 +1,17 @@
+@import '../contact-info/contact-info.css';
+@import '../contact-form/contact-form.css';
+
+/* Elementos: */
+@import './__container/contact__container.css';
+@import './__header/contact__header.css';
+@import './__subtitle/contact__subtitle.css';
+@import './__title/contact__title.css';
+@import './__line/contact__line.css';
+@import './__banner/contact__banner.css';
+@import './__avatar/contact__avatar.css';
+@import './__avatar-img/contact__avatar-img.css';
+@import './__wrapper/contact__wrapper.css';
+
 .contact {
     padding: 80px 8%;
     background-color: var(--bg-section-white); 

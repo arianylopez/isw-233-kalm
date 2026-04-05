@@ -1,3 +1,7 @@
+@import './__header/resume-card__header.css';
+@import './__icon-box/resume-card__icon-box.css';
+@import './__title/resume-card__title.css';
+
 .resume-card {
     background-color: var(--card-bg-primary);
     border-radius: 20px;

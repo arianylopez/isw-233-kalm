@@ -1,3 +1,7 @@
+@import '../btn/btn.css';
+@import '../btn/_white/btn_white.css';
+@import '../btn/_outline/btn_outline.css';
+
 :root {
     --bg-body: #FDFBF7;       
     --sidebar-bg: #FFFFFF;     
@@ -30,7 +34,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Asegurar que los Web Components ocupen su espacio y no colapsen */
 home-section, about-section, curriculum-section, projects-section, blog-section, contact-section, footer-section, blog-card {
     display: block;
     width: 100%;

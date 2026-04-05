@@ -1,3 +1,14 @@
+@import './__title/contact-info__title.css';
+@import './__items/contact-info__items.css';
+@import './__item/contact-info__item.css';
+@import './__icon-box/contact-info__icon-box.css';
+@import './__details/contact-info__details.css';
+@import './__label/contact-info__label.css';
+@import './__value/contact-info__value.css';
+@import './__socials-title/contact-info__socials-title.css';
+@import './__socials-icons/contact-info__socials-icons.css';
+@import './__social-link/contact-info__social-link.css';
+
 .contact-info {
     flex: 1; 
     background-color: var(--card-bg-primary);

@@ -1,3 +1,18 @@
+@import '../service-card/service-card.css';
+
+@import './__container/about__container.css';
+@import './__content/about__content.css';
+@import './__subtitle/about__subtitle.css';
+@import './__title/about__title.css';
+@import './__line/about__line.css';
+@import './__description/about__description.css';
+@import './__skills/about__skills.css';
+@import './__skill-tag/about__skill-tag.css';
+@import './__visuals/about__visuals.css';
+@import './__avatar/about__avatar.css';
+@import './__avatar-img/about__avatar-img.css';
+@import './__services/about__services.css';
+
 .about {
     min-height: 100vh;
     background-color: var(--bg-section-white); 

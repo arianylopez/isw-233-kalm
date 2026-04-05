@@ -1,3 +1,15 @@
+@import './__container/footer__container.css';
+@import './__top/footer__top.css';
+@import './__col/footer__col.css';
+@import './__title/footer__title.css';
+@import './__desc/footer__desc.css';
+@import './__links/footer__links.css';
+@import './__link/footer__link.css';
+@import './__socials/footer__socials.css';
+@import './__social-link/footer__social-link.css';
+@import './__bottom/footer__bottom.css';
+@import './__copy/footer__copy.css';
+
 .footer {
     background-color: #4A3F35;
     color: #FFFFFF;

@@ -1,3 +1,9 @@
+@import './__avatar/profile-card__avatar.css';
+@import './__img/profile-card__img.css';
+@import './__name/profile-card__name.css';
+@import './__role/profile-card__role.css';
+@import './__desc/profile-card__desc.css';
+
 .profile-card {
     background-color: var(--card-bg-primary);
     border-radius: 20px;
