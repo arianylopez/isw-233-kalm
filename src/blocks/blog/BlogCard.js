@@ -17,10 +17,9 @@ export class BlogCard extends HTMLElement {
         const readTime = this.getAttribute('readTime') || '';
         const content = this.getAttribute('content') || ''; 
 
-        const styleLink = document.createElement('link');
-        styleLink.rel = 'stylesheet';
-        styleLink.href = './styles.css';
-        this.shadowRoot.appendChild(styleLink);
+        document.querySelectorAll('style, link[rel="stylesheet"]').forEach(styleNode => {
+            this.shadowRoot.appendChild(styleNode.cloneNode(true));
+        });
 
         const faLink = document.createElement('link');
         faLink.rel = 'stylesheet';
@@ -28,12 +27,10 @@ export class BlogCard extends HTMLElement {
         this.shadowRoot.appendChild(faLink);
 
         const template = document.getElementById('blog-card-template');
-        if (!template) {
-            console.error("CRÍTICO: No se encontró <template id='blog-card-template'> en index.html");
-            return; 
-        }
+        if (!template) return; 
         
         this.shadowRoot.appendChild(template.content.cloneNode(true));
+
         const imgEl = this.shadowRoot.querySelector('.blog-card__img');
         const badgeEl = this.shadowRoot.querySelector('.blog-card__badge');
         const titleEl = this.shadowRoot.querySelector('.blog-card__title');
@@ -90,5 +87,4 @@ export class BlogCard extends HTMLElement {
         });
     }
 }
-
 customElements.define('blog-card', BlogCard);
