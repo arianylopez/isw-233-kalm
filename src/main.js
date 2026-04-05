@@ -118,6 +118,19 @@ import './blocks/hobbies/__item/hobbies__item.css';
 import './blocks/hobbies/__icon-box/hobbies__icon-box.css';
 import './blocks/hobbies/__name/hobbies__name.css';
 
+import './blocks/footer/footer.css';
+import './blocks/footer/__container/footer__container.css';
+import './blocks/footer/__top/footer__top.css';
+import './blocks/footer/__col/footer__col.css';
+import './blocks/footer/__title/footer__title.css';
+import './blocks/footer/__desc/footer__desc.css';
+import './blocks/footer/__links/footer__links.css';
+import './blocks/footer/__link/footer__link.css';
+import './blocks/footer/__socials/footer__socials.css';
+import './blocks/footer/__social-link/footer__social-link.css';
+import './blocks/footer/__bottom/footer__bottom.css';
+import './blocks/footer/__copy/footer__copy.css';
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
 import './blocks/resume/CurriculumSection.js';
