@@ -1,19 +1,19 @@
-import Router from './services/Router.js';
+import Router from './services/Router';
 
 import './styles.css'; 
 
-import './blocks/home/HomeSection.js';
-import './blocks/about/AboutSection.js';
-import './blocks/resume/CurriculumSection.js';
-import './blocks/projects/ProjectsSection.js';
-import './blocks/blog/BlogSection.js';
-import './blocks/contact/ContactSection.js';
-import './blocks/footer/FooterSection.js';
+import './blocks/home/HomeSection';
+import './blocks/about/AboutSection';
+import './blocks/resume/CurriculumSection';
+import './blocks/projects/ProjectsSection';
+import './blocks/blog/BlogSection';
+import './blocks/contact/ContactSection';
+import './blocks/footer/FooterSection';
 
 document.addEventListener('DOMContentLoaded', () => {
     Router.init();
 
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('theme-toggle') as HTMLInputElement;
     const body = document.body;
     
     const savedTheme = localStorage.getItem('app-theme');

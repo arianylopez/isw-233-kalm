@@ -17,11 +17,10 @@ export class BaseComponent extends HTMLElement {
         faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
         this.shadowRoot.appendChild(faLink);
 
-        const template = document.getElementById(this.templateId);
+        const template = document.getElementById(this.templateId) as HTMLTemplateElement;
+        
         if (template) {
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
-        } else {
-            console.error(`Template no encontrado: ${this.templateId}`);
+            this.shadowRoot!.appendChild(template.content.cloneNode(true)); // Usamos "!" para decirle que shadowRoot no es null
         }
     }
 }
