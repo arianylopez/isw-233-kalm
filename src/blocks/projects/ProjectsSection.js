@@ -65,4 +65,7 @@ export class ProjectsSection extends BaseDataSection {
         }
     }
 }
-customElements.define('projects-section', ProjectsSection);
+
+if (!customElements.get('projects-section')) {
+    customElements.define('projects-section', ProjectsSection);
+}

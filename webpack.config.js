@@ -32,8 +32,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader'
+        test: /\.(html|hbs)$/,
+        loader: 'handlebars-loader',
+        options: {
+          // Le decimos a Webpack dónde buscar los {{> partials }}
+          partialDirs: [path.resolve(__dirname, 'src/partials')], 
+        }
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
@@ -73,6 +77,11 @@ module.exports = {
         { 
           from: 'public', 
           to: 'assets', 
+          noErrorOnMissing: true 
+        },
+        { 
+          from: 'src/data', 
+          to: 'data', 
           noErrorOnMissing: true 
         }
       ]

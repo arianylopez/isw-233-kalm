@@ -87,4 +87,7 @@ export class BlogCard extends HTMLElement {
         });
     }
 }
-customElements.define('blog-card', BlogCard);
+
+if (!customElements.get('blog-card')) {
+    customElements.define('blog-card', BlogCard);
+}
