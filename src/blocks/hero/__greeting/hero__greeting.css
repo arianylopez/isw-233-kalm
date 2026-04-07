@@ -1,0 +1,16 @@
+.hero__greeting {
+    display: inline-block; 
+    background-color: var(--text-white); 
+    color: var(--accent-main); 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    padding: 8px 15px; 
+    margin-bottom: 25px; 
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+}
+
+body.dark-mode .hero__greeting { 
+    background-color: var(--bg-section-white); 
+    color: #ffffff; 
+}

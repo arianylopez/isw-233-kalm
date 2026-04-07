@@ -1,0 +1,17 @@
+.btn--outline {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--text-white);
+}
+.btn--outline:hover {
+    background-color: var(--text-white);
+    color: var(--bg-hero);
+}
+body.dark-mode .btn--outline {
+    border-color: var(--text-white);
+    color: var(--text-white);
+}
+body.dark-mode .btn--outline:hover {
+    background-color: var(--text-white);
+    color: #9F8C76;
+}

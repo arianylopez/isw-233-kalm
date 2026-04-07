@@ -1,0 +1,19 @@
+@import '../project-card/project-card.css';
+
+@import './__container/projects__container.css';
+@import './__header/projects__header.css';
+@import './__subtitle/projects__subtitle.css';
+@import './__title/projects__title.css';
+@import './__line/projects__line.css';
+@import './__grid/projects__grid.css';
+
+.projects {
+    padding: 100px 8%;
+    background-color: var(--bg-section-white); 
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    .projects {
+        padding: 80px 5%;
+    }
+}

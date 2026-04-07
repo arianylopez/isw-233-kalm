@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+    .sidebar__nav { 
+        display: none; 
+    } 
+}

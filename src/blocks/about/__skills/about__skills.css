@@ -1,0 +1,12 @@
+.about__skills { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 40px; 
+    flex-wrap: wrap; 
+}
+
+@media (max-width: 992px) { 
+    .about__skills { 
+        justify-content: center; 
+    } 
+}

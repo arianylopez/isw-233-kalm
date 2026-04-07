@@ -1,0 +1,7 @@
+.service-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    text-transform: uppercase;
+}

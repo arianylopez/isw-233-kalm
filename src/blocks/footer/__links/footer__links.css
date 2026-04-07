@@ -1,0 +1,6 @@
+.footer__links {
+    list-style: none;
+}
+.footer__links li {
+    margin-bottom: 12px;
+}

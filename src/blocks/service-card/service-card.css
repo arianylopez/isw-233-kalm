@@ -1,0 +1,20 @@
+@import './__icon-box/service-card__icon-box.css';
+@import './__icon/service-card__icon.css';
+@import './__title/service-card__title.css';
+@import './__desc/service-card__desc.css';
+
+.service-card {
+    background-color: var(--card-bg-primary);
+    border: 1px solid var(--card-border); 
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: var(--transition);
+}
+.service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    border-color: var(--accent-main);
+}
+body.dark-mode .service-card:hover {
+    background-color: var(--accent-dark); 
+}

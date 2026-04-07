@@ -1,0 +1,10 @@
+.blog__description {
+    color: var(--text-main); 
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+}
+body.dark-mode .blog__description {
+    color: #F0F0F0; 
+    font-size: 1.1rem;
+}

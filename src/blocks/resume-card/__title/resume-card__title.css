@@ -1,0 +1,5 @@
+.resume-card__title {
+    color: var(--text-title);
+    font-size: 1.2rem;
+    font-weight: 700;
+}

@@ -1,0 +1,41 @@
+@import './__header/sidebar__header.css';
+@import './__logo/sidebar__logo.css';
+@import './__title/sidebar__title.css';
+@import './__nav/sidebar__nav.css';
+@import './__menu/sidebar__menu.css';
+@import './__link/sidebar__link.css';
+@import './__icon/sidebar__icon.css';
+@import './__theme/sidebar__theme.css';
+@import './__theme-icon/sidebar__theme-icon.css';
+@import './__theme-switch/sidebar__theme-switch.css';
+@import './__theme-input/sidebar__theme-input.css';
+@import './__theme-slider/sidebar__theme-slider.css';
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 50px 30px; 
+    display: flex;
+    flex-direction: column;
+    gap: 60px; 
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,12 @@
+.timeline__dot {
+    position: absolute;
+    left: -6px; 
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-main);
+    border-radius: 50%;
+}
+body.dark-mode .timeline__dot {
+    background-color: var(--accent-dark); 
+}

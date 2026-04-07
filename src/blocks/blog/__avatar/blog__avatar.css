@@ -1,0 +1,15 @@
+.blog__avatar {
+    position: absolute;
+    right: 0;
+    top: -20px; 
+    z-index: 10;
+}
+@media (max-width: 900px) {
+    .blog__avatar {
+        position: relative;
+        top: 0;
+        align-self: flex-end; 
+        margin-top: -60px;
+        margin-right: 20px;
+    }
+}

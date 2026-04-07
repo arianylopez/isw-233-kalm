@@ -1,0 +1,12 @@
+.sidebar__logo {
+    background-color: var(--accent-main); 
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; 
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.2rem;
+}

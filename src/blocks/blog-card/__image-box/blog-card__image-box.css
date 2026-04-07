@@ -1,0 +1,5 @@
+.blog-card__image-box {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}

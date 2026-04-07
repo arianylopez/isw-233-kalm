@@ -1,0 +1,8 @@
+.contact__wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+@media (max-width: 900px) {
+    .contact__wrapper { flex-direction: column; }
+}
