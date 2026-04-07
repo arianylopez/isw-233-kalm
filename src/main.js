@@ -1,7 +1,7 @@
-// src/main.js
 import Router from './services/Router.js';
 
-// Ya no importamos CSS aquí, solo la lógica de los componentes
+import './styles.css'; 
+
 import './blocks/home/HomeSection.js';
 import './blocks/about/AboutSection.js';
 import './blocks/resume/CurriculumSection.js';
