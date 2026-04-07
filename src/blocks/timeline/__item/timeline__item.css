@@ -1,0 +1,8 @@
+.timeline__item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+.timeline__item:last-child {
+    margin-bottom: 0;
+}

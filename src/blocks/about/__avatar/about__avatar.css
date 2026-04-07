@@ -1,0 +1,9 @@
+.about__avatar { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: -70px; 
+    margin-bottom: 5px; 
+    z-index: 2; 
+    position: relative; 
+}

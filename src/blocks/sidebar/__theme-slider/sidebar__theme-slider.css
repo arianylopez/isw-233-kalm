@@ -1,0 +1,37 @@
+.sidebar__theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; 
+    transition: .4s;
+}
+
+.sidebar__theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+.sidebar__theme-input:checked + .sidebar__theme-slider {
+    background-color: var(--accent-main); 
+}
+
+.sidebar__theme-input:checked + .sidebar__theme-slider:before {
+    transform: translateX(18px);
+}
+
+.sidebar__theme-slider--round {
+    border-radius: 34px;
+}
+
+.sidebar__theme-slider--round:before {
+    border-radius: 50%;
+}

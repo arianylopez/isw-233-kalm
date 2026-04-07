@@ -1,0 +1,9 @@
+.hero__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+@media (max-width: 768px) {
+    .hero__wrapper { flex-direction: column-reverse; justify-content: center; }
+}

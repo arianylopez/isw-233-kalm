@@ -1,0 +1,13 @@
+.sidebar__theme {
+    margin-top: auto; 
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 5px; 
+}
+
+@media (max-width: 768px) {
+    .sidebar__theme { 
+        display: none; 
+    } 
+}

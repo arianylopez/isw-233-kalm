@@ -1,0 +1,29 @@
+@import './__image-box/blog-card__image-box.css';
+@import './__img/blog-card__img.css';
+@import './__badge/blog-card__badge.css';
+@import './__content/blog-card__content.css';
+@import './__meta/blog-card__meta.css';
+@import './__title/blog-card__title.css';
+@import './__desc/blog-card__desc.css';
+
+blog-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg-primary);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    height: 100%;
+    cursor: pointer; 
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+}

@@ -1,0 +1,15 @@
+.contact__banner {
+    background-color: var(--accent-main);
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    max-width: 85%; 
+}
+body.dark-mode .contact__banner { 
+    background-color: var(--card-bg-primary); 
+}
+@media (max-width: 900px) {
+    .contact__banner { max-width: 100%; margin-top: 60px; }
+}

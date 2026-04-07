@@ -1,0 +1,12 @@
+.blog__subtitle {
+    font-size: 0.9rem;
+    color: var(--text-white); 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+body.dark-mode .blog__subtitle {
+    color: var(--text-muted);
+}

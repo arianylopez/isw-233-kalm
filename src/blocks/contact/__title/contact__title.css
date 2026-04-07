@@ -1,0 +1,7 @@
+.contact__title {
+    font-size: 3rem;
+    color: var(--text-title);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}

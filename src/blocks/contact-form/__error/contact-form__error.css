@@ -1,0 +1,10 @@
+.contact-form__error {
+    display: none;
+    color: #D32F2F;
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+.contact-form__group--error .contact-form__error {
+    display: block;
+}

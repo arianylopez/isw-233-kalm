@@ -1,0 +1,5 @@
+.timeline__institution {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+body.dark-mode .timeline__institution { color: #F0F0F0; }

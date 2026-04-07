@@ -1,0 +1,9 @@
+.hobbies__name {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+.hobbies__item:hover .hobbies__name {
+    color: var(--text-white);
+}
+body.dark-mode .hobbies__name { color: var(--text-white); }

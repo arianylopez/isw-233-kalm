@@ -1,0 +1,14 @@
+@import '../profile-card/profile-card.css';
+@import '../resume-card/resume-card.css';
+@import '../timeline/timeline.css';
+@import '../skills/skills.css';
+@import '../hobbies/hobbies.css';
+
+@import './__container/resume__container.css';
+@import './__column/resume__column.css';
+
+.resume {
+    padding: 80px 8%;
+    background-color: var(--bg-section-brown); 
+    min-height: 100vh;
+}

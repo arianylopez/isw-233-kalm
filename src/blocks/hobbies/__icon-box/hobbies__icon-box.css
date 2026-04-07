@@ -1,0 +1,16 @@
+.hobbies__icon-box {
+    width: 35px;
+    height: 35px;
+    background-color: var(--accent-main); 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+    font-size: 1rem;
+    flex-shrink: 0; 
+}
+.hobbies__item:hover .hobbies__icon-box {
+    color: var(--text-white);
+}
+body.dark-mode .hobbies__icon-box { background-color: #4E342E; }

@@ -1,0 +1,5 @@
+.project-card__image-box {
+    position: relative; 
+    height: 250px;
+    overflow: hidden;
+}

@@ -1,0 +1,19 @@
+.contact-form__submit {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-dark);
+    color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.contact-form__submit:hover {
+    background-color: var(--text-main);
+}

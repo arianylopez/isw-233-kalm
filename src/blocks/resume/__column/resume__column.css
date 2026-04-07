@@ -1,0 +1,19 @@
+.resume__column--left {
+    width: 30%; 
+    position: sticky;
+    top: 100px;
+}
+
+.resume__column--right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (max-width: 992px) {
+    .resume__column--left,
+    .resume__column--right {
+        width: 100%;
+        position: static;
+    }
+}
