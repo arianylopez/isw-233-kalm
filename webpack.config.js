@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -10,7 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: isProduction ? '[name].[contenthash].js' : '[name].js',
-    clean: true, 
+    clean: true,
   },
   devtool: isProduction ? false : 'source-map',
   devServer: {
@@ -25,30 +28,30 @@ module.exports = {
         use: [
           isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
-          'postcss-loader' 
+          'postcss-loader'
         ],
       },
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader' 
+        loader: 'handlebars-loader'
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 8 * 1024, 
+            maxSize: 8 * 1024,
           },
         },
         generator: {
-          filename: 'images/[name].[contenthash][ext]' 
+          filename: 'images/[name].[contenthash][ext]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name].[contenthash][ext]' 
+          filename: 'fonts/[name].[contenthash][ext]'
         }
       }
     ],
@@ -65,5 +68,25 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isProduction ? '[name].[contenthash].css' : '[name].css',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { 
+          from: 'public', 
+          to: 'assets', 
+          noErrorOnMissing: true 
+        }
+      ]
+    }),
+    ...(isProduction ? [new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false })] : [])
   ],
+  optimization: {
+    minimize: isProduction,
+    minimizer: [
+      `...`, 
+      new CssMinimizerPlugin(), 
+    ],
+    splitChunks: {
+      chunks: 'all', 
+    },
+  },
 };
