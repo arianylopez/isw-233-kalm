@@ -35,7 +35,6 @@ module.exports = {
         test: /\.(html|hbs)$/,
         loader: 'handlebars-loader',
         options: {
-          // Le decimos a Webpack dónde buscar los {{> partials }}
           partialDirs: [path.resolve(__dirname, 'src/partials')], 
         }
       },
@@ -76,7 +75,7 @@ module.exports = {
       patterns: [
         { 
           from: 'public', 
-          to: 'assets', 
+          to: '.', 
           noErrorOnMissing: true 
         },
         { 

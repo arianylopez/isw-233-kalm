@@ -167,4 +167,6 @@ export class BlogSection extends BaseDataSection {
     }
 }
 
-customElements.define('blog-section', BlogSection);
+if (!customElements.get('blog-section')) {
+    customElements.define('blog-section', BlogSection);
+}
