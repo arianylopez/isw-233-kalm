@@ -1,15 +1,14 @@
+// src/main.js
 import Router from './services/Router.js';
-import './styles.css';
-import './blocks/global/global.css';
 
-import './blocks/sidebar/sidebar.css';
-import './blocks/hero/hero.css';
-import './blocks/about/about.css';
-import './blocks/resume/resume.css';
-import './blocks/projects/projects.css';
-import './blocks/contact/contact.css';
-import './blocks/blog/blog.css';
-import './blocks/footer/footer.css';
+// Ya no importamos CSS aquí, solo la lógica de los componentes
+import './blocks/home/HomeSection.js';
+import './blocks/about/AboutSection.js';
+import './blocks/resume/CurriculumSection.js';
+import './blocks/projects/ProjectsSection.js';
+import './blocks/blog/BlogSection.js';
+import './blocks/contact/ContactSection.js';
+import './blocks/footer/FooterSection.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     Router.init();
