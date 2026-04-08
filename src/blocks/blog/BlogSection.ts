@@ -1,6 +1,6 @@
-import store from '../../services/Store.js';
-import { BaseDataSection } from '../../services/BaseDataSection.js';
-import './BlogCard.js'; 
+import store from '../../services/Store';
+import { BaseDataSection } from '../../services/BaseDataSection';
+import './BlogCard'; 
 
 export class BlogSection extends BaseDataSection {
     get templateId() { return 'blog-template'; }

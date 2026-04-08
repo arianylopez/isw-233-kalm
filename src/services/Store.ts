@@ -1,6 +1,16 @@
-import Observer from './Observer.js';
+import Observer from './Observer';
+
+// 1. Definimos la 'forma' de nuestro estado
+interface StoreState {
+    favorites: string[];
+    activeCategory: string;
+}
 
 class Store extends Observer {
+    static instance: Store;
+    
+    state!: StoreState;
+
     constructor() {
         super(); 
         
@@ -8,11 +18,13 @@ class Store extends Observer {
             return Store.instance;
         }
         Store.instance = this;
-        let savedFavorites = [];
+        
+        let savedFavorites: string[] = [];
+        
         try {
             const data = localStorage.getItem('blog_favorites');
             if (data) {
-                savedFavorites = JSON.parse(data);
+                savedFavorites = JSON.parse(data) as string[];
                 if (!Array.isArray(savedFavorites)) savedFavorites = []; 
             }
         } catch (e) {
@@ -26,7 +38,7 @@ class Store extends Observer {
         };
     }
 
-    toggleFavorite(blogTitle) {
+    toggleFavorite(blogTitle: string): void {
         if (!this.state.favorites) this.state.favorites = [];
 
         const index = this.state.favorites.indexOf(blogTitle);

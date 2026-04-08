@@ -1,2 +1,2 @@
-import { ComponentFactory } from '../../services/ComponentFactory.js';
+import { ComponentFactory } from '../../services/ComponentFactory';
 ComponentFactory.createStaticComponent('contact-section', 'contact-template');

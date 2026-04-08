@@ -1,4 +1,4 @@
-import { BaseDataSection } from '../../services/BaseDataSection.js';
+import { BaseDataSection } from '../../services/BaseDataSection';
 
 export class ProjectsSection extends BaseDataSection {
     get templateId() { return 'projects-template'; }

@@ -1,4 +1,4 @@
-import store from '../../services/Store.js'; 
+import store from '../../services/Store'; 
 
 export class BlogCard extends HTMLElement {
     constructor() {
