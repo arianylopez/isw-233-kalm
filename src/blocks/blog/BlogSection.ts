@@ -2,8 +2,25 @@ import store from '../../services/Store';
 import { BaseDataSection } from '../../services/BaseDataSection';
 import './BlogCard'; 
 
+export interface Blog {
+    title: string;
+    description: string;
+    image: string;
+    badge: string;
+    date: string;
+    readTime: string;
+    content?: string; 
+    category: string;
+}
+
 export class BlogSection extends BaseDataSection {
-    get templateId() { return 'blog-template'; }
+    blogsData: Blog[];
+    filteredBlogs: Blog[];
+    currentIndex: number;
+    itemsPerPage: number;
+    observer: IntersectionObserver | null;
+
+    get templateId(): string { return 'blog-template'; }
 
     constructor() {
         super();
@@ -14,7 +31,7 @@ export class BlogSection extends BaseDataSection {
         this.observer = null;
     }
 
-    processData() {
+    processData(): void {
         if (this.data && this.data.blogs) {
             this.blogsData = this.data.blogs;
         } else {
@@ -22,19 +39,20 @@ export class BlogSection extends BaseDataSection {
         }
     }
 
-    normalizeText(text) {
+    normalizeText(text: string | null | undefined): string {
         if (!text) return "";
         return text.trim().toLowerCase();
     }
 
-    renderData() {
-        const grid = this.shadowRoot.querySelector('#dynamic-blog-grid');
-        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
+    renderData(): void {
+        const grid = this.shadowRoot!.querySelector('#dynamic-blog-grid') as HTMLElement | null;
+        const sentinel = this.shadowRoot!.querySelector('#blog-sentinel') as HTMLElement | null;
+        
         if (!grid) return;
         
         grid.innerHTML = ''; 
         this.currentIndex = 0; 
-        sentinel.innerHTML = ''; 
+        if (sentinel) sentinel.innerHTML = ''; 
         
         const activeCategory = store.state.activeCategory;
 
@@ -60,13 +78,15 @@ export class BlogSection extends BaseDataSection {
         this.setupIntersectionObserver();
     }
 
-    loadMoreItems() {
-        const grid = this.shadowRoot.querySelector('#dynamic-blog-grid');
-        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
+    loadMoreItems(): void {
+        const grid = this.shadowRoot!.querySelector('#dynamic-blog-grid') as HTMLElement | null;
+        const sentinel = this.shadowRoot!.querySelector('#blog-sentinel') as HTMLElement | null;
         
+        if (!grid) return;
+
         const nextBatch = this.filteredBlogs.slice(this.currentIndex, this.currentIndex + this.itemsPerPage);
 
-        nextBatch.forEach(blog => {
+        nextBatch.forEach((blog: Blog) => {
             const card = document.createElement('blog-card');
             card.setAttribute('title', blog.title);
             card.setAttribute('desc', blog.description);
@@ -74,6 +94,7 @@ export class BlogSection extends BaseDataSection {
             card.setAttribute('badge', blog.badge);
             card.setAttribute('date', blog.date);
             card.setAttribute('readTime', blog.readTime);
+            
             const fullContent = blog.content ? blog.content : blog.description;
             card.setAttribute('content', fullContent);
             
@@ -92,8 +113,9 @@ export class BlogSection extends BaseDataSection {
         }
     }
 
-    setupIntersectionObserver() {
-        const sentinel = this.shadowRoot.querySelector('#blog-sentinel');
+    setupIntersectionObserver(): void {
+        const sentinel = this.shadowRoot!.querySelector('#blog-sentinel') as HTMLElement | null;
+        if (!sentinel) return;
         
         if (this.observer) this.observer.disconnect();
 
@@ -112,12 +134,15 @@ export class BlogSection extends BaseDataSection {
         this.observer.observe(sentinel);
     }
 
-    setupListeners() {
-        const btns = this.shadowRoot.querySelectorAll('.blog__filter-btn');
+    setupListeners(): void {
+        const btns = this.shadowRoot!.querySelectorAll('.blog__filter-btn') as NodeListOf<HTMLElement>;
         btns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                store.state.activeCategory = e.target.dataset.category;
-                this.renderData();
+            btn.addEventListener('click', (e: Event) => {
+                const target = e.target as HTMLElement;
+                if (target.dataset.category) {
+                    store.state.activeCategory = target.dataset.category;
+                    this.renderData();
+                }
             });
         });
 
@@ -127,24 +152,26 @@ export class BlogSection extends BaseDataSection {
             }
         });
 
-        const modal = this.shadowRoot.querySelector('#blogModal');
-        const overlay = this.shadowRoot.querySelector('#modalOverlay');
-        const closeBtn = this.shadowRoot.querySelector('#modalClose');
+        const modal = this.shadowRoot!.querySelector('#blogModal') as HTMLElement | null;
+        const overlay = this.shadowRoot!.querySelector('#modalOverlay') as HTMLElement | null;
+        const closeBtn = this.shadowRoot!.querySelector('#modalClose') as HTMLElement | null;
 
-        this.addEventListener('open-blog-modal', (e) => {
+        this.addEventListener('open-blog-modal', (e: Event) => {
+            const customEvent = e as CustomEvent;
+            
             if (!modal) {
                 console.warn("El HTML del modal no se encontró en el template del blog.");
                 return; 
             }
 
-            const data = e.detail;
+            const data = customEvent.detail;
             
-            const modalImg = this.shadowRoot.querySelector('#modalImg');
-            const modalTitle = this.shadowRoot.querySelector('#modalTitle');
-            const modalDate = this.shadowRoot.querySelector('#modalDate');
-            const modalTime = this.shadowRoot.querySelector('#modalTime');
-            const modalBadge = this.shadowRoot.querySelector('#modalBadge');
-            const modalContent = this.shadowRoot.querySelector('#modalContent');
+            const modalImg = this.shadowRoot!.querySelector('#modalImg') as HTMLImageElement | null;
+            const modalTitle = this.shadowRoot!.querySelector('#modalTitle') as HTMLElement | null;
+            const modalDate = this.shadowRoot!.querySelector('#modalDate') as HTMLElement | null;
+            const modalTime = this.shadowRoot!.querySelector('#modalTime') as HTMLElement | null;
+            const modalBadge = this.shadowRoot!.querySelector('#modalBadge') as HTMLElement | null;
+            const modalContent = this.shadowRoot!.querySelector('#modalContent') as HTMLElement | null;
 
             if (modalImg) { modalImg.src = data.image; modalImg.alt = data.title; }
             if (modalTitle) modalTitle.textContent = data.title;

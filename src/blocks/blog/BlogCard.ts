@@ -6,8 +6,8 @@ export class BlogCard extends HTMLElement {
         this.attachShadow({ mode: 'open' });
     }
 
-    connectedCallback() {
-        if (this.shadowRoot.querySelector('.blog-card')) return;
+    connectedCallback(): void {
+        if (this.shadowRoot!.querySelector('.blog-card')) return;
 
         const title = this.getAttribute('title') || '';
         const desc = this.getAttribute('desc') || '';
@@ -18,26 +18,26 @@ export class BlogCard extends HTMLElement {
         const content = this.getAttribute('content') || ''; 
 
         document.querySelectorAll('style, link[rel="stylesheet"]').forEach(styleNode => {
-            this.shadowRoot.appendChild(styleNode.cloneNode(true));
+            this.shadowRoot!.appendChild(styleNode.cloneNode(true));
         });
 
         const faLink = document.createElement('link');
         faLink.rel = 'stylesheet';
         faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-        this.shadowRoot.appendChild(faLink);
+        this.shadowRoot!.appendChild(faLink);
 
-        const template = document.getElementById('blog-card-template');
+        const template = document.getElementById('blog-card-template') as HTMLTemplateElement | null;
         if (!template) return; 
         
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot!.appendChild(template.content.cloneNode(true));
 
-        const imgEl = this.shadowRoot.querySelector('.blog-card__img');
-        const badgeEl = this.shadowRoot.querySelector('.blog-card__badge');
-        const titleEl = this.shadowRoot.querySelector('.blog-card__title');
-        const descEl = this.shadowRoot.querySelector('.blog-card__desc');
-        const dateEl = this.shadowRoot.querySelector('.blog-card__date-text');
-        const timeEl = this.shadowRoot.querySelector('.blog-card__time-text');
-        const favBtn = this.shadowRoot.querySelector('.blog-card__fav-btn');
+        const imgEl = this.shadowRoot!.querySelector('.blog-card__img') as HTMLImageElement | null;
+        const badgeEl = this.shadowRoot!.querySelector('.blog-card__badge') as HTMLElement | null;
+        const titleEl = this.shadowRoot!.querySelector('.blog-card__title') as HTMLElement | null;
+        const descEl = this.shadowRoot!.querySelector('.blog-card__desc') as HTMLElement | null;
+        const dateEl = this.shadowRoot!.querySelector('.blog-card__date-text') as HTMLElement | null;
+        const timeEl = this.shadowRoot!.querySelector('.blog-card__time-text') as HTMLElement | null;
+        const favBtn = this.shadowRoot!.querySelector('.blog-card__fav-btn') as HTMLElement | null;
 
         if (imgEl) {
             imgEl.src = image;
@@ -51,8 +51,8 @@ export class BlogCard extends HTMLElement {
         if (timeEl) timeEl.innerHTML = `<i class="far fa-clock"></i> ${readTime}`;
 
         if (favBtn) {
-            const heartIcon = favBtn.querySelector('i');
-            const favorites = (store.state && store.state.favorites) ? store.state.favorites : [];
+            const heartIcon = favBtn.querySelector('i') as HTMLElement | null;
+            const favorites: string[] = (store.state && store.state.favorites) ? store.state.favorites : [];
             const isFavorite = favorites.includes(title);
             
             if (isFavorite) {
@@ -63,7 +63,7 @@ export class BlogCard extends HTMLElement {
                 favBtn.style.color = 'var(--text-light)';
             }
 
-            favBtn.addEventListener('click', (e) => {
+            favBtn.addEventListener('click', (e: Event) => {
                 e.stopPropagation(); 
                 store.toggleFavorite(title);
 
@@ -78,7 +78,7 @@ export class BlogCard extends HTMLElement {
             });
         }
 
-        this.shadowRoot.addEventListener('click', () => {
+        this.shadowRoot!.addEventListener('click', () => {
             this.dispatchEvent(new CustomEvent('open-blog-modal', {
                 bubbles: true,
                 composed: true, 

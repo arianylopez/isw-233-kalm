@@ -1,7 +1,18 @@
 import { BaseDataSection } from '../../services/BaseDataSection';
 
+export interface Project {
+    title: string;
+    description: string;
+    image: string;
+    githubLink: string;
+    tags: string[];
+}
+
 export class ProjectsSection extends BaseDataSection {
-    get templateId() { return 'projects-template'; }
+    projectsList: Project[];
+    resizeObserver: ResizeObserver | null;
+
+    get templateId(): string { return 'projects-template'; }
 
     constructor() {
         super();
@@ -9,18 +20,19 @@ export class ProjectsSection extends BaseDataSection {
         this.resizeObserver = null; 
     }
 
-    processData() {
+    processData(): void {
         if (this.data && this.data.projects) {
             this.projectsList = this.data.projects;
         }
     }
 
-    renderData() {
-        const grid = this.shadowRoot.querySelector('#dynamic-projects-grid');
+    renderData(): void {
+        const grid = this.shadowRoot!.querySelector('#dynamic-projects-grid') as HTMLElement | null;
         if (!grid) return;
+        
         grid.innerHTML = ''; 
 
-        this.projectsList.forEach(project => {
+        this.projectsList.forEach((project: Project) => {
             const tagsHtml = project.tags.map(tag => `<span class="project-card__tag">${tag}</span>`).join('');
             grid.innerHTML += `
                 <article class="project-card">
@@ -38,8 +50,8 @@ export class ProjectsSection extends BaseDataSection {
         });
     }
 
-    setupListeners() {
-        const grid = this.shadowRoot.querySelector('#dynamic-projects-grid');
+    setupListeners(): void {
+        const grid = this.shadowRoot!.querySelector('#dynamic-projects-grid') as HTMLElement | null;
         if (!grid) return;
 
         if (this.resizeObserver) this.resizeObserver.disconnect();
@@ -49,7 +61,7 @@ export class ProjectsSection extends BaseDataSection {
                 const currentWidth = entry.contentRect.width;
 
                 if (currentWidth < 650) {
-                    grid.style.gridTemplateColumns = '1fr'; // 1 columna
+                    grid.style.gridTemplateColumns = '1fr'; 
                 } else {
                     grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
                 }
@@ -59,7 +71,7 @@ export class ProjectsSection extends BaseDataSection {
         this.resizeObserver.observe(grid);
     }
 
-    disconnectedCallback() {
+    disconnectedCallback(): void {
         if (this.resizeObserver) {
             this.resizeObserver.disconnect();
         }
