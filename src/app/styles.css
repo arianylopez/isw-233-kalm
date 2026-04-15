@@ -1,0 +1,9 @@
+@import './shared/ui/global/global.css';        
+@import './features/sidebar/sidebar.css';      
+@import './widgets/hero/hero.css';
+@import './widgets/about/about.css';
+@import './widgets/resume/resume.css';
+@import './widgets/projects/projects.css';    
+@import './widgets/blog/blog.css';
+@import './widgets/contact/contact.css';
+@import './widgets/footer/footer.css';
