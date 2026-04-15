@@ -1,0 +1,5 @@
+.sidebar__theme-icon {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transform: rotate(-25deg); 
+}

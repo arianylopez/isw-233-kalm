@@ -1,0 +1,21 @@
+@import './__image-box/project-card__image-box.css';
+@import './__img/project-card__img.css';
+@import './__github/project-card__github.css';
+@import './__content/project-card__content.css';
+@import './__title/project-card__title.css';
+@import './__desc/project-card__desc.css';
+@import './__tags/project-card__tags.css';
+@import './__tag/project-card__tag.css';
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+.project-card:hover {
+    transform: translateY(-10px); 
+}

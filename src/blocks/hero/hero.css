@@ -1,0 +1,24 @@
+@import './__wrapper/hero__wrapper.css';
+@import './__content/hero__content.css';
+@import './__greeting/hero__greeting.css';
+@import './__title/hero__title.css';
+@import './__description/hero__description.css';
+@import './__actions/hero__actions.css';
+@import './__visual/hero__visual.css';
+@import './__image-wrapper/hero__image-wrapper.css';
+@import './__image/hero__image.css';
+
+.hero {
+    min-height: 100vh;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
+    background-color: var(--bg-hero); 
+    color: var(--text-white);
+    transition: background-color 0.3s ease;
+}
+@media (max-width: 768px) {
+    .hero { padding: 40px 20px; text-align: center; }
+}

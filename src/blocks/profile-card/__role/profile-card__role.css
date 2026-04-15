@@ -1,0 +1,12 @@
+.profile-card__role {
+    display: block;
+    color: var(--accent-hover);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+body.dark-mode .profile-card__role {
+    color: #EFEBE9;
+}

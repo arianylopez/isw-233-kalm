@@ -1,0 +1,14 @@
+.hero__actions { 
+    display: flex; 
+    gap: 20px; 
+    margin-top: 30px; 
+}
+
+@media (max-width: 768px) {
+    .hero__actions { 
+        justify-content: center; 
+        width: 100%; 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+}

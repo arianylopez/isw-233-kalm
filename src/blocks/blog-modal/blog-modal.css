@@ -1,0 +1,24 @@
+@import './_active/blog-modal_active.css';
+@import './__overlay/blog-modal__overlay.css';
+@import './__box/blog-modal__box.css';
+@import './__close/blog-modal__close.css';
+@import './__header-img/blog-modal__header-img.css';
+@import './__body/blog-modal__body.css';
+@import './__meta/blog-modal__meta.css';
+@import './__title/blog-modal__title.css';
+@import './__content-text/blog-modal__content-text.css';
+
+.blog-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}

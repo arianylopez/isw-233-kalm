@@ -1,0 +1,8 @@
+.project-card__content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--project-content-bg); 
+    color: var(--text-white);
+    padding: 30px;
+}

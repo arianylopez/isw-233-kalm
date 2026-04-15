@@ -1,0 +1,8 @@
+.profile-card__desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+body.dark-mode .profile-card__desc {
+    color: #F0F0F0;
+}

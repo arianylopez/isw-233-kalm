@@ -1,0 +1,5 @@
+.contact-info__label {
+    font-weight: 700;
+    color: var(--text-title);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,21 @@
+@import '../blog-card/blog-card.css';
+@import '../blog-modal/blog-modal.css';
+
+@import './__container/blog__container.css';
+@import './__header-area/blog__header-area.css';
+@import './__titles/blog__titles.css';
+@import './__subtitle/blog__subtitle.css';
+@import './__title/blog__title.css';
+@import './__line/blog__line.css';
+@import './__description-box/blog__description-box.css';
+@import './__description/blog__description.css';
+@import './__avatar/blog__avatar.css';
+@import './__avatar-img/blog__avatar-img.css';
+@import './__grid/blog__grid.css';
+
+.blog {
+    padding: 80px 8%;
+    background-color: var(--bg-section-brown); 
+    min-height: 100vh;
+    position: relative;
+}

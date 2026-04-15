@@ -1,0 +1,6 @@
+.timeline__date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+body.dark-mode .timeline__date { color: #EFEBE9; }

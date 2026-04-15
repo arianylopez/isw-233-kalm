@@ -1,0 +1,8 @@
+.about__skill-tag { 
+    background-color: var(--card-bg-secondary); 
+    color: var(--text-main); 
+    padding: 10px 25px; 
+    border-radius: 30px; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+}

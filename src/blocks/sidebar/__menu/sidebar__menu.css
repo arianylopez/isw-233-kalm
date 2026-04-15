@@ -1,0 +1,7 @@
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    margin-top: 10px;
+    list-style: none;
+}

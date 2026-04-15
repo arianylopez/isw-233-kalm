@@ -1,0 +1,6 @@
+.contact-form__title {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    font-weight: 700;
+    margin-bottom: 30px;
+}

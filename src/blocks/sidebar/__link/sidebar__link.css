@@ -1,0 +1,21 @@
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    text-decoration: none;
+    color: var(--text-muted); 
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase; 
+}
+
+.sidebar__link:hover,
+.sidebar__link--active {
+    color: var(--accent-main); 
+}
+
+.sidebar__link:hover .sidebar__icon,
+.sidebar__link--active .sidebar__icon {
+    color: var(--accent-main);
+}

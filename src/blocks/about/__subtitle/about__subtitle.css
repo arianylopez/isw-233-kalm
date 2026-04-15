@@ -1,0 +1,9 @@
+.about__subtitle { 
+    font-size: 0.9rem; 
+    color: var(--accent-main); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    display: block; 
+    margin-bottom: 10px; 
+}
