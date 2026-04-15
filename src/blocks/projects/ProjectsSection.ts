@@ -1,4 +1,4 @@
-import { BaseDataSection } from '../../services/BaseDataSection';
+import { BaseDataSection } from '../../shared/lib/BaseDataSection';
 
 export interface Project {
     title: string;

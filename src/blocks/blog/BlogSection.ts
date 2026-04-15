@@ -1,5 +1,5 @@
-import store from '../../services/Store';
-import { BaseDataSection } from '../../services/BaseDataSection';
+import store from '../../shared/lib/Store';
+import { BaseDataSection } from '../../shared/lib/BaseDataSection';
 import './BlogCard'; 
 
 export interface Blog {

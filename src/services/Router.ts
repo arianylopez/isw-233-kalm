@@ -1,4 +1,4 @@
-import { ROUTES } from './API';
+import { ROUTES } from '../shared/api/API';
 
 const Router = {
     go(route: string, addToHistory: boolean = true): void {
