@@ -1,4 +1,4 @@
-@import '../service-card/service-card.css';
+@import '../../entities/Service/service-card/service-card.css';
 
 @import './__container/about__container.css';
 @import './__content/about__content.css';

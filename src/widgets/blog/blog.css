@@ -1,5 +1,5 @@
-@import '../blog-card/blog-card.css';
-@import '../blog-modal/blog-modal.css';
+@import '../../entities/Blog/blog-card/blog-card.css';
+@import '../../entities/Blog/blog-modal/blog-modal.css';
 
 @import './__container/blog__container.css';
 @import './__header-area/blog__header-area.css';

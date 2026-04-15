@@ -1,14 +1,14 @@
-import Router from './services/Router';
+import Router from '../services/Router';
 
 import './styles.css'; 
 
-import './blocks/home/HomeSection';
-import './blocks/about/AboutSection';
-import './blocks/resume/CurriculumSection';
-import './blocks/projects/ProjectsSection';
-import './blocks/blog/BlogSection';
-import './blocks/contact/ContactSection';
-import './blocks/footer/FooterSection';
+import '../pages/home/HomeSection';
+import '../widgets/about/AboutSection';
+import '../widgets/resume/CurriculumSection';
+import '../widgets/projects/ProjectsSection';
+import '../widgets/blog/BlogSection';
+import '../widgets/contact/ContactSection';
+import '../widgets/footer/FooterSection';
 
 document.addEventListener('DOMContentLoaded', () => {
     Router.init();

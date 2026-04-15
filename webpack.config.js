@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  entry: './src/main.ts',
+  entry: './src/app/main.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: isProduction ? '[name].[contenthash].js' : '[name].js',
@@ -38,7 +38,12 @@ module.exports = {
         test: /\.(html|hbs)$/,
         loader: 'handlebars-loader',
         options: {
-          partialDirs: [path.resolve(__dirname, 'src/partials')], 
+          partialDirs: [
+            path.resolve(__dirname, 'src/entities/Contact/contact-info'),
+            path.resolve(__dirname, 'src/entities/Service/service-card'),
+            path.resolve(__dirname, 'src/entities/Resume/timeline'),
+            path.resolve(__dirname, 'src/partials') 
+          ], 
         }
       },
       {
@@ -87,8 +92,8 @@ module.exports = {
           noErrorOnMissing: true 
         },
         { 
-          from: 'src/data', 
-          to: 'data', 
+          from: 'src/shared/api/data.json', 
+          to: 'data/data.json', 
           noErrorOnMissing: true 
         }
       ]

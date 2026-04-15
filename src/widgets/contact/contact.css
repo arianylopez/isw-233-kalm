@@ -1,7 +1,6 @@
-@import '../contact-info/contact-info.css';
-@import '../contact-form/contact-form.css';
+@import '../../entities/Contact/contact-info/contact-info.css';
+@import '../../features/contact-form/contact-form.css';
 
-/* Elementos: */
 @import './__container/contact__container.css';
 @import './__header/contact__header.css';
 @import './__subtitle/contact__subtitle.css';

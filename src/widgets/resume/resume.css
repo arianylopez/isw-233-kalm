@@ -1,6 +1,6 @@
-@import '../profile-card/profile-card.css';
-@import '../resume-card/resume-card.css';
-@import '../timeline/timeline.css';
+@import '../../entities/Profile/profile-card/profile-card.css';
+@import '../../entities/Resume/resume-card/resume-card.css';
+@import '../../entities/Resume/timeline/timeline.css';
 @import '../skills/skills.css';
 @import '../hobbies/hobbies.css';
 
